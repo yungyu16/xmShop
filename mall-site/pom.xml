@@ -10,11 +10,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mall-site</artifactId>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.xmlvhy.shop</groupId>
             <artifactId>mall-core</artifactId>
+        </dependency>
+        <!--jsp页面使用jstl标签-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <!--用于编译jsp-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.alipay.sdk</groupId>

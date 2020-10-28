@@ -36,25 +36,25 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
-    @Value("${ftp.host}")
+    @Value("${biz.ftp.host}")
     private String host;
 
-    @Value("${ftp.port}")
+    @Value("${biz.ftp.port}")
     private Integer port;
 
-    @Value("${ftp.username}")
+    @Value("${biz.ftp.username}")
     private String username;
 
-    @Value("${ftp.password}")
+    @Value("${biz.ftp.password}")
     private String password;
 
-    @Value("${ftp.basePath}")
+    @Value("${biz.ftp.basePath}")
     private String basePath;
 
-    @Value("${ftp.path}")
+    @Value("${biz.ftp.path}")
     private String path;
 
-    @Value("${ftp.baseUrl}")
+    @Value("${biz.ftp.baseUrl}")
     private String baseUrl;
 
     /**

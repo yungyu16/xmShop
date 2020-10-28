@@ -5,8 +5,18 @@ spring:
     password: admin123456
   mvc:
     view:
-      prefix: 1
+      prefix: /WEB-INF/views/
+      suffix: .jsp
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: com.xmlvhy.shop.admin.pojo
   config-location: classpath:mybatis/mybatis-config.xml
+biz:
+  ftp:
+    host: 111
+    port: 11
+    username: 11
+    password: 11
+    basePath: 11
+    path=: 11
+    baseUrl: 11
