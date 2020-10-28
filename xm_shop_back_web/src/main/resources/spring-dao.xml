@@ -28,7 +28,7 @@
         <!--映射文件类路径-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
         <!--实体类包名-->
-        <property name="typeAliasesPackage" value="com.xmlvhy.shop.pojo"/>
+        <property name="typeAliasesPackage" value="com.xmlvhy.shop.core.pojo"/>
 
         <!--配置分页插件 pageHelper-->
         <property name="plugins">
