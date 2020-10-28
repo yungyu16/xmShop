@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>我的购物车</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.xmlvhy.com/images/xmshop/favicon.ico"  media="screen"/>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.xmlvhy.com/images/xmshop/favicon.ico"
+          media="screen"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/xmstyle.css"/>
@@ -231,7 +232,7 @@
             </div>
         </div>
     </div>
-</div >
+</div>
 <!--移除购物车汇总选中的商品 end -->
 
 <!-- footers start -->

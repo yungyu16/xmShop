@@ -53,26 +53,26 @@
     <img src="${pageContext.request.contextPath}/images/bird.png" alt="" class="bird"/>
     <img src="${pageContext.request.contextPath}/images/san.png" alt="" class="san"/>
     <%--<div class="tipInfo">--%>
-        <%--<div class="in">--%>
-            <%--<div class="textThis">--%>
-                <%--<h4>页面不存在！</h4>--%>
-                <%--<p><span>页面自动<a id="href" href="${pageContext.request.contextPath}/front/product/searchAllProducts">跳转</a></span><span>等待<b id="wait"> 6</b> 秒</span></p>--%>
-                <%--<script type="text/javascript">--%>
-                    <%--(function () {--%>
-                    <%--var wait = document.getElementById('wait'),--%>
-                    <%--href = document.getElementById('href').href;--%>
-                    <%--var interval = setInterval(function () {--%>
-                        <%--var time = --wait.innerHTML;--%>
-                        <%--if (time <= 0) {--%>
-                            <%--//清楚计时器--%>
-                            <%--clearInterval(interval);--%>
-                            <%--location.href = href;--%>
-                        <%--};--%>
-                    <%--}, 1000);--%>
-                <%--})();--%>
-                <%--</script>--%>
-            <%--</div>--%>
-        <%--</div>--%>
+    <%--<div class="in">--%>
+    <%--<div class="textThis">--%>
+    <%--<h4>页面不存在！</h4>--%>
+    <%--<p><span>页面自动<a id="href" href="${pageContext.request.contextPath}/front/product/searchAllProducts">跳转</a></span><span>等待<b id="wait"> 6</b> 秒</span></p>--%>
+    <%--<script type="text/javascript">--%>
+    <%--(function () {--%>
+    <%--var wait = document.getElementById('wait'),--%>
+    <%--href = document.getElementById('href').href;--%>
+    <%--var interval = setInterval(function () {--%>
+    <%--var time = --wait.innerHTML;--%>
+    <%--if (time <= 0) {--%>
+    <%--//清楚计时器--%>
+    <%--clearInterval(interval);--%>
+    <%--location.href = href;--%>
+    <%--};--%>
+    <%--}, 1000);--%>
+    <%--})();--%>
+    <%--</script>--%>
+    <%--</div>--%>
+    <%--</div>--%>
     <%--</div>--%>
     <div class="col-sm-5 col-sm-offset-5" style="top: 40%;">
         <span class="h2 text-info">抱歉，访问的页面不存在或已被删除~</span>

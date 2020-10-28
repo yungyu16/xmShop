@@ -102,9 +102,9 @@
             </div>
         </div>
 
-    <%--TODO:商品展示没有加分页功能，还有数据的回显功能--%>
-    <!-- 中间展示的内容 start -->
-    <%--<div class="container-fluid" style="background-color: #FFF8DC">--%>
+        <%--TODO:商品展示没有加分页功能，还有数据的回显功能--%>
+        <!-- 中间展示的内容 start -->
+        <%--<div class="container-fluid" style="background-color: #FFF8DC">--%>
         <div class="container">
             <div class="container">
                 <div class="row">

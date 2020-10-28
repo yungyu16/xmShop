@@ -91,8 +91,11 @@
                 <c:forEach items="${orderItems}" var="orderItem">
                     <tr>
                         <td>${orderItem.id}</td>
-                        <td><span style="cursor: pointer" onclick="showProductFromOrder(${orderItem.product.id})">${orderItem.product.name}</span></td>
-                        <td><img src="${orderItem.product.image}" alt="" width="60" height="60" style="cursor: pointer" onclick="showProductFromOrder(${orderItem.product.id})"></td>
+                        <td><span style="cursor: pointer"
+                                  onclick="showProductFromOrder(${orderItem.product.id})">${orderItem.product.name}</span>
+                        </td>
+                        <td><img src="${orderItem.product.image}" alt="" width="60" height="60" style="cursor: pointer"
+                                 onclick="showProductFromOrder(${orderItem.product.id})"></td>
                         <td>${orderItem.num}</td>
                         <td>${orderItem.price}</td>
                     </tr>
@@ -219,10 +222,11 @@
 <script>
     //点击支付跳转到支付页面
     function payOrder() {
-        location.href = '${pageContext.request.contextPath}/front/order/showPayOrders?orderNumber='+'${order.orderNumber}';
+        location.href = '${pageContext.request.contextPath}/front/order/showPayOrders?orderNumber=' + '${order.orderNumber}';
     }
 
     <%--显示提示取消订单的modal 框--%>
+
     function showCancelOrderModal(orderId) {
         $('#orderId').val(orderId);
         $('#cancelOrderModal').modal('show');
@@ -320,7 +324,7 @@
 
     //展示商品详情
     function showProductFromOrder(productId) {
-        location.href = '${pageContext.request.contextPath}/front/product/showProductDetail?id='+productId;
+        location.href = '${pageContext.request.contextPath}/front/product/showProductDetail?id=' + productId;
     }
 </script>
 

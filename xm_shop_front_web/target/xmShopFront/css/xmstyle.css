@@ -102,15 +102,16 @@
     outline: none;
     background: none;
 }
-.cartCount span{
+
+.cartCount span {
     color: #848484;
     font-size: 14px;
     padding-right: 18px;
     line-height: 70px
 }
 
-.textBox{
-    width:40px;
+.textBox {
+    width: 40px;
     text-align: center;
     color: #0F0F0F;
 }
@@ -120,8 +121,9 @@
     font-size: 14px;
     padding-left: 10px;
 }
+
 /*购物车按钮部分*/
-.shop{
+.shop {
     margin-top: 30px;
     float: left;
     width: 100%;
@@ -130,9 +132,9 @@
 }
 
 /*加入购车车按钮*/
-.shop .cartBtn{
-    color: #4AB344!important;
-    text-align:center;
+.shop .cartBtn {
+    color: #4AB344 !important;
+    text-align: center;
     width: 160px;
     height: 42px;
     border: 1px solid #4AB344;
@@ -141,7 +143,7 @@
 }
 
 /*立即购买按钮*/
-.shop .buyBtn{
+.shop .buyBtn {
     margin-left: 15px;
     width: 160px;
     height: 42px;
@@ -149,7 +151,8 @@
     text-align: center;
     padding: 0
 }
-.imgShow{
+
+.imgShow {
     width: 399px;
     height: 399px;
     text-align: center;

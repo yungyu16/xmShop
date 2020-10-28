@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>我的购物车</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.xmlvhy.com/images/xmshop/favicon.ico"  media="screen"/>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.xmlvhy.com/images/xmshop/favicon.ico"
+          media="screen"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.min.css"/>
@@ -33,7 +34,8 @@
     </div>
     <div>
         <h3 class="text-success" style="text-align: center;margin-top: 180px">
-            购物车空空如也，<a class="btn-link" href="${pageContext.request.contextPath}/front/product/searchAllProducts">前往购物~</a>
+            购物车空空如也，<a class="btn-link"
+                       href="${pageContext.request.contextPath}/front/product/searchAllProducts">前往购物~</a>
         </h3>
     </div>
 </div>

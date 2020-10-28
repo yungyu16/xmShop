@@ -265,7 +265,7 @@
         function showModifyAddress() {
             var spid = $('#modifyId').val();
             if (spid == '') {
-                layer.msg("您还未添加地址，请先添加",{
+                layer.msg("您还未添加地址，请先添加", {
                     time: 1500,
                     skin: 'warningMsg'
                 });
@@ -317,7 +317,7 @@
                             layer.msg(result.message, {
                                 time: 1000,
                                 skin: 'successMsg'
-                            },function () {
+                            }, function () {
                                 //地址修改成功，刷新页面
                                 location.reload();
                             });
@@ -348,7 +348,7 @@
                             layer.msg(result.message, {
                                 time: 1000,
                                 skin: 'successMsg'
-                            },function () {
+                            }, function () {
                                 //刷新页面
                                 location.reload();
                             });

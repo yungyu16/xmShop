@@ -12,39 +12,43 @@
     </sql>
 
     <select id="selectAll" resultType="ProductType">
-        select <include refid="productTypeColumn"/>
+        select
+        <include refid="productTypeColumn"/>
         from t_product_type
     </select>
 
     <select id="selectProductTypeById" resultType="ProductType">
-        select <include refid="productTypeColumn"/>
+        select
+        <include refid="productTypeColumn"/>
         from t_product_type
         where id = #{id}
     </select>
 
     <select id="selectProductTypeByName" resultType="ProductType">
-        select <include refid="productTypeColumn"/>
+        select
+        <include refid="productTypeColumn"/>
         from t_product_type
         where name = #{name}
     </select>
 
     <select id="findAllEnableProductTypes" resultType="ProductType">
-        select <include refid="productTypeColumn"/>
+        select
+        <include refid="productTypeColumn"/>
         from t_product_type
         where status = #{status}
     </select>
 
     <select id="selectAllValidByStatus" resultType="ProductType">
-        select <include refid="productTypeColumn"/>
+        select
+        <include refid="productTypeColumn"/>
         from t_product_type
         where status = #{status}
     </select>
 
     <insert id="insertProductType">
         insert into t_product_type
-          (name,status)
-        values
-          (#{name},#{status})
+            (name, status)
+        values (#{name}, #{status})
     </insert>
 
     <update id="updateName">
@@ -60,7 +64,8 @@
     </update>
 
     <delete id="deleteProductTypeById">
-        delete from t_product_type
+        delete
+        from t_product_type
         where id = #{id}
     </delete>
 

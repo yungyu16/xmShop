@@ -56,7 +56,8 @@
         <div class="in">
             <div class="textThis">
                 <h2>服务器内部错误！</h2>
-                <p><span>页面自动<a id="href" href="${pageContext.request.contextPath}/front/product/searchAllProducts">跳转</a></span><span>等待<b
+                <p><span>页面自动<a id="href"
+                                href="${pageContext.request.contextPath}/front/product/searchAllProducts">跳转</a></span><span>等待<b
                         id="wait"> 6</b> 秒</span></p>
                 <script type="text/javascript">
                     (function () {
@@ -67,7 +68,8 @@
                             if (time <= 0) {
                                 clearInterval(interval);
                                 location.href = href;
-                            };
+                            }
+                            ;
                         }, 1000);
                     })();
                 </script>

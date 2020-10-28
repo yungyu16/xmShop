@@ -521,11 +521,11 @@
                     <a href="javascript:void(0)"
                        onclick="${sessionScope.get('customer') == null ? 'showLoginModal()' :'showCustomerInfo()'}">个人中心</a>
                 </li>
-<%--                <li>--%>
-<%--                    <div style="background-color: #ff6600; margin: 20px 80px">--%>
-<%--                        <span>本站只是项目功能演示，不会产生任何交易信息！</span>--%>
-<%--                    </div>--%>
-<%--                </li>--%>
+                <%--                <li>--%>
+                <%--                    <div style="background-color: #ff6600; margin: 20px 80px">--%>
+                <%--                        <span>本站只是项目功能演示，不会产生任何交易信息！</span>--%>
+                <%--                    </div>--%>
+                <%--                </li>--%>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="navbarInfo">
                 <%--TODO: 使用c:choose 判断 session中是否存有用户的信息--%>

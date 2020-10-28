@@ -31,9 +31,11 @@
             cursor: pointer;
             border: 0;
         }
-        .second li{
+
+        .second li {
             padding: 8px 6px;
         }
+
         /*地址卡片鼠标放上去的状态*/
         .second li:hover {
             background: #9d9d9d;
@@ -122,6 +124,7 @@
         }
 
         <%--显示提示取消订单的modal 框--%>
+
         function showCancelOrderModal(orderId) {
             console.log(orderId);
             $('#orderId').val(orderId);
@@ -222,7 +225,7 @@
 
         //支付订单
         function payMyOrders(orderNumber) {
-            location.href = '${pageContext.request.contextPath}/front/order/showPayOrders?orderNumber='+orderNumber;
+            location.href = '${pageContext.request.contextPath}/front/order/showPayOrders?orderNumber=' + orderNumber;
         }
 
         /*左边导航栏*/
@@ -230,30 +233,35 @@
         function showNotPaid() {
             location.href = '${pageContext.request.contextPath}/front/order/showNotPaid';
         }
+
         //显示未发货的订单列表
         function showNotShipped() {
             location.href = '${pageContext.request.contextPath}/front/order/showNotShipped';
         }
+
         //显示待收货的订单列表
         function showReceive() {
             location.href = '${pageContext.request.contextPath}/front/order/showReceive';
         }
+
         //显示已完成交易的订单列表
         function showFinished() {
             location.href = '${pageContext.request.contextPath}/front/order/showFinished';
         }
+
         //显示已取消的订单列表
         function showCancel() {
             location.href = '${pageContext.request.contextPath}/front/order/showCancel';
         }
+
         //显示回收站的订单列表
         function showDelete() {
             location.href = '${pageContext.request.contextPath}/front/order/showDelete';
         }
-        
+
         //展示商品详情
         function showProductFromOrder(productId) {
-            location.href = '${pageContext.request.contextPath}/front/product/showProductDetail?id='+productId;
+            location.href = '${pageContext.request.contextPath}/front/product/showProductDetail?id=' + productId;
         }
     </script>
 </head>
@@ -336,9 +344,12 @@
                     <c:forEach items="${orderVo.orderItemList}" var="orderItem">
                         <tr>
                             <td class="col-sm-1">
-                                <img src="${orderItem.product.image}" alt="" style="cursor: pointer" onclick="showProductFromOrder(${orderItem.product.id})">
+                                <img src="${orderItem.product.image}" alt="" style="cursor: pointer"
+                                     onclick="showProductFromOrder(${orderItem.product.id})">
                             </td>
-                            <td><span style="cursor: pointer" onclick="showProductFromOrder(${orderItem.product.id})">${orderItem.product.name}</span></td>
+                            <td><span style="cursor: pointer"
+                                      onclick="showProductFromOrder(${orderItem.product.id})">${orderItem.product.name}</span>
+                            </td>
                             <td><span>${orderItem.num}</span></td>
                             <td><span>&yen; ${orderItem.product.price}</span></td>
                             <td><span>&yen; ${orderItem.price}</span></td>

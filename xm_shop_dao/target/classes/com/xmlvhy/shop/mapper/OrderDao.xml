@@ -45,54 +45,75 @@
     </resultMap>
 
     <select id="selectAllOrderByCustomerId" resultMap="OrderMap2">
-        select o.id,o.order_number,o.price,o.create_date,o.address,o.product_number,o.status
+        select o.id, o.order_number, o.price, o.create_date, o.address, o.product_number, o.status
         from t_order o
-        left join t_customer t on o.customer_id = t.id
-        where o.customer_id = #{customerId} and o.status != 5
-          order by o.create_date desc
+                 left join t_customer t on o.customer_id = t.id
+        where o.customer_id = #{customerId}
+          and o.status != 5
+        order by o.create_date desc
     </select>
 
     <select id="selectOrdersByCustomerId" resultMap="OrderMap2">
-        select o.id,o.order_number,o.price,o.create_date,o.address,o.product_number,o.status
+        select o.id, o.order_number, o.price, o.create_date, o.address, o.product_number, o.status
         from t_order o
-        left join t_customer t on o.customer_id = t.id
-        where o.customer_id = #{customerId} and o.status = #{status}
-          order by o.create_date desc
+                 left join t_customer t on o.customer_id = t.id
+        where o.customer_id = #{customerId}
+          and o.status = #{status}
+        order by o.create_date desc
     </select>
 
     <select id="selectOrderIdByOrderNoAndCustomerId" resultMap="OrderMap">
-      select o.id,o.order_number,o.price,o.create_date,o.address,o.product_number,o.status,c.id'c.id',c.name
+        select o.id,
+               o.order_number,
+               o.price,
+               o.create_date,
+               o.address,
+               o.product_number,
+               o.status,
+               c.id 'c.id',
+               c.name
         from t_order o
-        left join t_customer c ON o.customer_id = c.id
-      where order_number = #{orderNo} and customer_id = #{customerId} and o.status != 5
+                 left join t_customer c ON o.customer_id = c.id
+        where order_number = #{orderNo}
+          and customer_id = #{customerId}
+          and o.status != 5
         order by o.create_date desc
     </select>
 
     <select id="selectOrderByOutTradeNo" resultMap="OrderMap">
-        select o.id,o.order_number,o.price,o.create_date,o.address,o.product_number,o.status,c.id'c.id',c.name
+        select o.id,
+               o.order_number,
+               o.price,
+               o.create_date,
+               o.address,
+               o.product_number,
+               o.status,
+               c.id 'c.id',
+               c.name
         from t_order o
-        left join t_customer c ON o.customer_id = c.id
+                 left join t_customer c ON o.customer_id = c.id
         where order_number = #{outTradeNo}
         order by o.create_date desc
     </select>
 
     <insert id="insertOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         insert into t_order
-          (order_number, customer_id, price, create_date, product_number, status, address)
-        values
-          (#{orderNumber},#{customer.id},#{price},#{createDate},#{productNumber},#{status},#{address})
+        (order_number, customer_id, price, create_date, product_number, status, address)
+        values (#{orderNumber}, #{customer.id}, #{price}, #{createDate}, #{productNumber}, #{status}, #{address})
     </insert>
 
     <update id="updateOrderStatusByCustomerIdAndOrderId">
         update t_order
-          set status = #{status}
-        where id = #{orderId} and customer_id = #{customerId}
+        set status = #{status}
+        where id = #{orderId}
+          and customer_id = #{customerId}
     </update>
 
     <update id="updateOrderStatusByCustomerIdAndOrderNo">
         update t_order
         set status = #{status}
-        where order_number = #{orderNumber} and customer_id = #{customerId}
+        where order_number = #{orderNumber}
+          and customer_id = #{customerId}
     </update>
 
     <update id="updateOrderStatusByOrderNo">

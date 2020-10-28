@@ -31,11 +31,22 @@
     </sql>
 
     <select id="selectCartByCustomerIdAndCartId" resultMap="CartMap">
-        select t.id,t.customer_id,t.product_num,t.total_price,t.status, t.create_time,p.id 'p.id',p.name,p.image,p.price
+        select t.id,
+               t.customer_id,
+               t.product_num,
+               t.total_price,
+               t.status,
+               t.create_time,
+               p.id 'p.id',
+               p.name,
+               p.image,
+               p.price
         from t_cart t
-          left join t_product p
-        on t.product_id = p.id
-        where t.id = #{cartId} and customer_id = #{customerId} and status = 1
+                 left join t_product p
+                           on t.product_id = p.id
+        where t.id = #{cartId}
+          and customer_id = #{customerId}
+          and status = 1
     </select>
 
     <select id="selectCartByCustomerIdAndProductId" resultType="Cart">
@@ -54,30 +65,39 @@
 
     <insert id="insertCart" parameterType="Cart" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         insert into t_cart
-          (customer_id, product_id, product_num,total_price,status,create_time)
-        values
-          (#{customerId},#{product.id},#{productNum},#{totalPrice},#{status},#{createTime})
+        (customer_id, product_id, product_num, total_price, status, create_time)
+        values (#{customerId}, #{product.id}, #{productNum}, #{totalPrice}, #{status}, #{createTime})
     </insert>
 
     <select id="selectAllCartByCustomerId" parameterType="integer" resultMap="CartMap">
-        select t.id,t.customer_id,t.product_num,t.total_price,t.status, t.create_time,p.id 'p.id',p.name,p.image,p.price
+        select t.id,
+               t.customer_id,
+               t.product_num,
+               t.total_price,
+               t.status,
+               t.create_time,
+               p.id 'p.id',
+               p.name,
+               p.image,
+               p.price
         from t_cart t
-          left join t_product p
-        on t.product_id = p.id
-        where customer_id = #{customerId} and status = 1
+                 left join t_product p
+                           on t.product_id = p.id
+        where customer_id = #{customerId}
+          and status = 1
     </select>
 
     <select id="selectCartByCartIdsAndCustomerId" resultMap="CartMap">
         select t.id,t.customer_id,t.product_num,t.total_price,t.status, t.create_time,p.id 'p.id',p.name,p.image,p.price
         from t_cart t
-          left join t_product p
+        left join t_product p
         on t.product_id = p.id
         where t.id in
-          <if test="cartIds != null and cartIds.length > 0">
+        <if test="cartIds != null and cartIds.length > 0">
             <foreach collection="cartIds" item="cartId" open="(" separator="," close=")">
                 #{cartId}
             </foreach>
-          </if>
+        </if>
         and customer_id = #{customerId} and status = #{status}
     </select>
 
@@ -97,21 +117,22 @@
 
     <update id="updateCartNumAndTotalPriceById">
         update t_cart
-          set product_num = #{productNum},
-              total_price = #{totalPrice}
+        set product_num = #{productNum},
+            total_price = #{totalPrice}
         where id = #{id}
     </update>
 
     <update id="updateCartStatusByCustomerId">
         update t_cart
-          set status = #{status}
+        set status = #{status}
         where customer_id = #{customerId}
     </update>
 
     <update id="updateCartStatusByCartIdAndCustomerId">
         update t_cart
-          set status = #{status}
-        where id = #{cartId} and customer_id = #{customerId}
+        set status = #{status}
+        where id = #{cartId}
+          and customer_id = #{customerId}
     </update>
 
     <!--TODO: 更新数据，当条件是一个整型的数组的时候，使用 foreach 语句-->
@@ -129,13 +150,16 @@
 
     <update id="updateProductNumAndPriceByCartIdAndCustomerIdAndStatus">
         update t_cart
-          set product_num = #{productNum},
-              total_price = #{totalPrice}
-        where id = #{cartId} and customer_id = #{customerId} and status = #{status}
+        set product_num = #{productNum},
+            total_price = #{totalPrice}
+        where id = #{cartId}
+          and customer_id = #{customerId}
+          and status = #{status}
     </update>
 
     <delete id="deleteCartById" parameterType="integer">
-        delete from t_cart
+        delete
+        from t_cart
         where id = #{id}
     </delete>
 </mapper>

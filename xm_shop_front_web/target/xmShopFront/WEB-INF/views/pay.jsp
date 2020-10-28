@@ -59,7 +59,7 @@
             // console.log(url)
             $.post(
                 '${pageContext.request.contextPath}/front/wxPay/goWxPay',
-                {'orderNumber':'${order.orderNumber}'},
+                {'orderNumber': '${order.orderNumber}'},
                 function (result) {
                     console.log(result);
                     if (result.status == 1) {
@@ -68,10 +68,10 @@
 
                         $("#pay_img").attr("src", url);
                         $('#myModal').modal('show');
-                    }else{
-                        layer.msg(result.message,{
-                           time: 1200,
-                           skin: 'errorMsg'
+                    } else {
+                        layer.msg(result.message, {
+                            time: 1200,
+                            skin: 'errorMsg'
                         });
                     }
                 }
@@ -89,23 +89,24 @@
             }
             $.post(
                 '${pageContext.request.contextPath}/front/wxPay/CheckPayStatus',
-                {'orderNumber':orderNumber},
+                {'orderNumber': orderNumber},
                 function (result) {
                     if (result.status == 1) {
                         // console.log("订单："+orderNumber+"已完成支付");
                         //订单状态已经修改，销毁定时器，并且跳转到成功页面
                         window.clearInterval(int);
                         setTimeout(function () {
-                           location.replace('${pageContext.request.contextPath}/front/wxPay/ShowPayStatus?orderNumber='+orderNumber);
-                        },1000);
+                            location.replace('${pageContext.request.contextPath}/front/wxPay/ShowPayStatus?orderNumber=' + orderNumber);
+                        }, 1000);
                     }
                 }
             );
         }
+
         //ajax 异步轮循,查看订单的状态是否更新
         var int = self.setInterval(function () {
             payStatus();
-        },1000);
+        }, 1000);
     </script>
 </head>
 
@@ -152,7 +153,8 @@
 
 
 <!-- 微信支付二维码弹出窗口 -->
-<div class="modal fade" style="top: 15%" align="center" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" style="top: 15%" align="center" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content" style="width: 70%">
             <div class="modal-header text-center">

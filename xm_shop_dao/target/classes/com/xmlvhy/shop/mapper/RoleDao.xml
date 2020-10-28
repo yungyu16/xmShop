@@ -11,7 +11,8 @@
     </sql>
 
     <select id="selectAllRoles" resultType="Role">
-        select <include refid="RoleColumn"/>
+        select
+        <include refid="RoleColumn"/>
         from t_role
     </select>
 

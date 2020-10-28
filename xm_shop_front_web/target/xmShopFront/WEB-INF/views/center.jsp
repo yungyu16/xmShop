@@ -156,7 +156,8 @@
         <%--</div>--%>
     </form>
 </div>
-<div class="modal fade" id="ModifyCustomerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: 10%">
+<div class="modal fade" id="ModifyCustomerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     style="top: 10%">
     <div class="modal-dialog" role="document" style="width: 36%">
         <div class="modal-content">
             <div class="modal-header">

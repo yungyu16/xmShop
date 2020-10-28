@@ -98,16 +98,16 @@
             //发送一个ajax 请求，到后端直接放入购物车中
             $.post(
                 '${pageContext.request.contextPath}/front/order/redirectBuyToCart',
-                {'count':count,'productId': productId},
+                {'count': count, 'productId': productId},
                 function (result) {
                     if (result.status == 1) {
                         //表示商品成功放入购物车中
                         console.log(result);
-                        location.replace('${pageContext.request.contextPath}/front/order/redirectConfirmOrder?cartId='+result.data);
-                    }else {
-                        layer.msg(result.message,{
-                           time: 1500,
-                           skin: 'errorMsg'
+                        location.replace('${pageContext.request.contextPath}/front/order/redirectConfirmOrder?cartId=' + result.data);
+                    } else {
+                        layer.msg(result.message, {
+                            time: 1500,
+                            skin: 'errorMsg'
                         });
                     }
                 });

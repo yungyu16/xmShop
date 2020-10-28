@@ -69,9 +69,11 @@
 
     <script>
         <%--查看订单列表--%>
+
         function showOrders() {
             location.href = '${pageContext.request.contextPath}/front/order/myOrders';
         }
+
         function goShopping() {
             location.href = '${pageContext.request.contextPath}/front/product/searchAllProducts';
         }
