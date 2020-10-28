@@ -3,12 +3,12 @@ package com.xmlvhy.front.shop.controller;
 import com.xmlvhy.shop.admin.common.exception.CustomerLoginNameIsExist;
 import com.xmlvhy.shop.admin.common.exception.PhoneNotRegistException;
 import com.xmlvhy.shop.admin.common.utils.CommonUtils;
-import com.xmlvhy.shop.admin.common.utils.RedisUtil;
 import com.xmlvhy.shop.admin.common.utils.ResponseResult;
 import com.xmlvhy.shop.admin.pojo.Customer;
 import com.xmlvhy.shop.admin.service.service.CustomerService;
 import com.xmlvhy.shop.admin.service.vo.CustomerVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.ObjectUtils;
@@ -31,6 +31,8 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     /**
      * 功能描述: 通过账户名密码登录
@@ -90,7 +92,7 @@ public class CustomerController {
             //判断验证码是否存在
             //Object code = session.getAttribute("smsVerifyCode");
             //TODO:/*从redis中获取验证码*/
-            String code = RedisUtil.get(session.getId());
+            String code = redisTemplate.boundValueOps(session.getId()).get();
             if (!ObjectUtils.isEmpty(code)) {
                 //判断验证码是否正确
                 if (Integer.parseInt(code) == verifyCode) {

@@ -1,12 +1,16 @@
 package com.xmlvhy.front.shop.controller;
 
 import com.xmlvhy.shop.admin.common.constant.WxPayConfig;
-import com.xmlvhy.shop.admin.common.utils.*;
+import com.xmlvhy.shop.admin.common.utils.IpUtils;
+import com.xmlvhy.shop.admin.common.utils.ResponseResult;
+import com.xmlvhy.shop.admin.common.utils.WxPayUtils;
+import com.xmlvhy.shop.admin.common.utils.ZxingUtil;
 import com.xmlvhy.shop.admin.pojo.Customer;
 import com.xmlvhy.shop.admin.pojo.Order;
 import com.xmlvhy.shop.admin.service.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +42,8 @@ public class WxPayController {
 
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @RequestMapping(value = "goWxPay")
     @ResponseBody
@@ -170,7 +176,7 @@ public class WxPayController {
                         Boolean status = orderService.modifyOrderStatusByOrderNo(outTradeNo);
                         if (status) {//需要通知微信订单处理成功
                             log.info("订单状态已成功更新");
-                            RedisUtil.set("transactionId", transaction_id);
+                            redisTemplate.boundValueOps("transactionId").set(transaction_id);
                         }
                     } else {
                         log.info("该笔订单已完成支付，无需更新");

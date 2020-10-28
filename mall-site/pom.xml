@@ -10,8 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mall-site</artifactId>
-    <packaging>war</packaging>
-
 
     <dependencies>
         <dependency>
@@ -23,34 +21,12 @@
             <artifactId>alipay-sdk-java</artifactId>
         </dependency>
     </dependencies>
-
     <build>
-        <finalName>xmShopFront</finalName>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-        </resources>
-        <!--<plugins>-->
-        <!--<plugin>-->
-        <!--<groupId>org.apache.tomcat.maven</groupId>-->
-        <!--<artifactId>tomcat7-maven-plugin</artifactId>-->
-        <!--<configuration>-->
-        <!--<path>/</path>-->
-        <!--<port>8080</port>-->
-        <!--</configuration>-->
-        <!--</plugin>-->
-        <!--</plugins>-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 </project>

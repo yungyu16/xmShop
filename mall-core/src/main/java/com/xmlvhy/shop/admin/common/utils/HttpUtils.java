@@ -1,6 +1,6 @@
 package com.xmlvhy.shop.admin.common.utils;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSON;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -19,8 +19,6 @@ import java.util.Map;
  * 封装http get post
  */
 public class HttpUtils {
-
-    private static final Gson gson = new Gson();
 
     /**
      * get方法
@@ -49,7 +47,7 @@ public class HttpUtils {
                 String jsonResult = EntityUtils.toString(httpResponse.getEntity());
                 //解决乱码
                 jsonResult = new String(jsonResult.getBytes("ISO-8859-1"), "UTF-8");
-                map = gson.fromJson(jsonResult, map.getClass());
+                map = JSON.parseObject(jsonResult, map.getClass());
             }
 
         } catch (Exception e) {
