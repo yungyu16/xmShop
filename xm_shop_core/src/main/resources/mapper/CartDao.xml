@@ -63,7 +63,7 @@
         where customer_id = #{customerId} and product_id = #{productId} and status = 2
     </select>
 
-    <insert id="insertCart" parameterType="Cart" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    <insert id="insertCart" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         insert into t_cart
         (customer_id, product_id, product_num, total_price, status, create_time)
         values (#{customerId}, #{product.id}, #{productNum}, #{totalPrice}, #{status}, #{createTime})

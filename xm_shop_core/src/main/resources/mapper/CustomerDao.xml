@@ -50,7 +50,7 @@
         from t_customer
     </select>
 
-    <select id="selectCustomersByParams" parameterType="com.xmlvhy.shop.params.CustomerParam" resultType="Customer">
+    <select id="selectCustomersByParams" resultType="Customer">
         select
         <include refid="CustomerColumn"/>
         from t_customer
@@ -74,20 +74,20 @@
 
     </select>
 
-    <insert id="insertCustomer" parameterType="Customer" useGeneratedKeys="true"
+    <insert id="insertCustomer" useGeneratedKeys="true"
             keyColumn="id" keyProperty="id">
         insert into t_customer
             (name, login_name, password, phone, address, is_valid, regist_date)
         values (#{name}, #{loginName}, #{password}, #{phone}, #{address}, #{isValid}, #{registDate})
     </insert>
 
-    <update id="updateCustomerPassword" parameterType="Customer">
+    <update id="updateCustomerPassword">
         update t_customer
         set password = #{password}
         where id = #{id}
     </update>
 
-    <update id="updateCustomer" parameterType="Customer">
+    <update id="updateCustomer">
         update t_customer
         set name    = #{name},
             phone   = #{phone},

@@ -96,7 +96,7 @@
         order by o.create_date desc
     </select>
 
-    <insert id="insertOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <insert id="insertOrder" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         insert into t_order
         (order_number, customer_id, price, create_date, product_number, status, address)
         values (#{orderNumber}, #{customer.id}, #{price}, #{createDate}, #{productNumber}, #{status}, #{address})

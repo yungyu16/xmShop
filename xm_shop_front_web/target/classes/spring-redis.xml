@@ -17,6 +17,6 @@
         <constructor-arg name="timeout" value="${redis.timeout}"/>
     </bean>
 
-    <bean class="com.xmlvhy.shop.common.utils.SpringBeanHolder"/>
+    <bean class="com.xmlvhy.shop.core.common.utils.SpringBeanHolder"/>
 
 </beans>

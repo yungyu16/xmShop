@@ -39,7 +39,7 @@
         product_type_id
     </sql>
 
-    <select id="selectByProductParams" parameterType="com.xmlvhy.shop.params.ProductParam" resultMap="productMap">
+    <select id="selectByProductParams" resultMap="productMap">
         select
         <include refid="productColumn"/>
         from t_product
@@ -94,13 +94,13 @@
         where id = #{id}
     </select>
 
-    <insert id="insertProduct" parameterType="Product">
+    <insert id="insertProduct">
         insert into t_product
             (name, price, info, image, product_type_id)
         values (#{name}, #{price}, #{info}, #{image}, #{productType.id})
     </insert>
 
-    <update id="updateProduct" parameterType="Product">
+    <update id="updateProduct">
         update t_product
         set name            = #{name},
             price           = #{price},

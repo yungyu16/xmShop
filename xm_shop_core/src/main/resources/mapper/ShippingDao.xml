@@ -35,7 +35,7 @@
         where customer_id = #{customerId} and status = #{status}
     </select>
 
-    <insert id="insertShipping" parameterType="Shipping" useGeneratedKeys="true"
+    <insert id="insertShipping" useGeneratedKeys="true"
             keyProperty="id" keyColumn="id">
         insert into t_shipping
         (customer_id, receiver_name, receiver_phone, receiver_mobile, receiver_city, receiver_province,
@@ -53,7 +53,7 @@
           and customer_id = #{customerId}
     </update>
 
-    <update id="updateByShipping" parameterType="Shipping">
+    <update id="updateByShipping">
         update t_shipping
         set receiver_name     = #{receiverName},
             receiver_phone    = #{receiverPhone},
