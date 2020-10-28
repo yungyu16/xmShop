@@ -26,9 +26,9 @@
         <!--数据源-->
         <property name="dataSource" ref="dataSource"/>
         <!--映射文件类路径-->
-        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
         <!--实体类包名-->
-        <property name="typeAliasesPackage" value="com.xmlvhy.shop.core.pojo"/>
+        <property name="typeAliasesPackage" value="com.xmlvhy.shop.admin.pojo"/>
 
         <!--配置分页插件 pageHelper-->
         <property name="plugins">

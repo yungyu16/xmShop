@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xm_shop_front_web</artifactId>
+    <artifactId>mall-site</artifactId>
     <packaging>war</packaging>
 
 

@@ -2,12 +2,12 @@ package com.xmlvhy.front.shop.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.xmlvhy.shop.core.common.constant.PaginationConstant;
-import com.xmlvhy.shop.core.dal.params.ProductParam;
-import com.xmlvhy.shop.core.pojo.Product;
-import com.xmlvhy.shop.core.pojo.ProductType;
-import com.xmlvhy.shop.core.service.service.ProductService;
-import com.xmlvhy.shop.core.service.service.ProductTypeService;
+import com.xmlvhy.shop.admin.common.constant.PaginationConstant;
+import com.xmlvhy.shop.admin.dal.params.ProductParam;
+import com.xmlvhy.shop.admin.pojo.Product;
+import com.xmlvhy.shop.admin.pojo.ProductType;
+import com.xmlvhy.shop.admin.service.service.ProductService;
+import com.xmlvhy.shop.admin.service.service.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,11 +1,11 @@
 package com.xmlvhy.front.shop.controller;
 
-import com.xmlvhy.shop.core.common.utils.ResponseResult;
-import com.xmlvhy.shop.core.pojo.Cart;
-import com.xmlvhy.shop.core.pojo.Customer;
-import com.xmlvhy.shop.core.service.service.CartService;
-import com.xmlvhy.shop.core.service.service.ProductService;
-import com.xmlvhy.shop.core.service.vo.CartVo;
+import com.xmlvhy.shop.admin.common.utils.ResponseResult;
+import com.xmlvhy.shop.admin.pojo.Cart;
+import com.xmlvhy.shop.admin.pojo.Customer;
+import com.xmlvhy.shop.admin.service.service.CartService;
+import com.xmlvhy.shop.admin.service.service.ProductService;
+import com.xmlvhy.shop.admin.service.vo.CartVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,9 +1,9 @@
 package com.xmlvhy.front.shop.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.xmlvhy.shop.core.common.utils.HttpClientUtils;
-import com.xmlvhy.shop.core.common.utils.RedisUtil;
-import com.xmlvhy.shop.core.common.utils.ResponseResult;
+import com.xmlvhy.shop.admin.common.utils.HttpClientUtils;
+import com.xmlvhy.shop.admin.common.utils.RedisUtil;
+import com.xmlvhy.shop.admin.common.utils.ResponseResult;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

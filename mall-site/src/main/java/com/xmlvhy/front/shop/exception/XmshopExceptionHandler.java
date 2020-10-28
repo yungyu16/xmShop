@@ -1,6 +1,6 @@
 package com.xmlvhy.front.shop.exception;
 
-import com.xmlvhy.shop.core.common.exception.*;
+import com.xmlvhy.shop.admin.common.exception.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
