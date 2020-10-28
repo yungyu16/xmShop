@@ -2,9 +2,10 @@ package com.xmlvhy.front.shop.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.xmlvhy.shop.admin.common.utils.HttpClientUtils;
-import com.xmlvhy.shop.admin.common.utils.RedisUtil;
 import com.xmlvhy.shop.admin.common.utils.ResponseResult;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Author: 小莫
@@ -35,6 +37,9 @@ public class SmsController {
     @Value("${sms.tplValue}")
     private String tplValue;
 
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+
     @RequestMapping("sendVerifyCode")
     @ResponseBody
     public ResponseResult sendVerifyCode(String phone, HttpSession session) {
@@ -47,8 +52,7 @@ public class SmsController {
 
             //将验证码放到redis缓存中,设置验证码有效期为2分钟
             //TODO:session.getId() session的id是唯一的
-            RedisUtil.set(session.getId(), smsCode + "", 2 * 60);
-
+            redisTemplate.boundValueOps(session.getId()).set(smsCode + "", 2, TimeUnit.MINUTES);
             //封装发送的内容
             Map<String, String> params = new HashMap<>();
             params.put("mobile", phone);
@@ -75,8 +79,7 @@ public class SmsController {
     @RequestMapping("CheckSmsCode")
     @ResponseBody
     public Map<String, Object> CheckSmsCode(String verifyCode, HttpSession session) {
-        String smsCode = RedisUtil.get(session.getId());
-
+        String smsCode = redisTemplate.boundValueOps(session.getId()).get();
         Map<String, Object> map = new HashMap<>();
 
         if (verifyCode.equals(smsCode)) {

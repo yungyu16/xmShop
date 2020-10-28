@@ -268,7 +268,7 @@ public class WxPayController {
     @RequestMapping("ShowPayStatus")
     public ModelAndView ShowPayStatus(String orderNumber, HttpSession session) {
         Customer customer = (Customer) session.getAttribute("customer");
-        String transactionId = RedisUtil.get("transactionId");
+        String transactionId = redisTemplate.boundValueOps("transactionId").get();
         ModelAndView mv = null;
         if (ObjectUtils.isEmpty(customer)) {
             mv = new ModelAndView("main");
