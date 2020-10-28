@@ -1,11 +1,11 @@
 package com.xmlvhy.front.shop.controller;
 
-import com.xmlvhy.shop.common.exception.ShippingException;
-import com.xmlvhy.shop.common.utils.ResponseResult;
-import com.xmlvhy.shop.pojo.Customer;
-import com.xmlvhy.shop.pojo.Shipping;
-import com.xmlvhy.shop.service.ShippingService;
-import com.xmlvhy.shop.vo.ShippingVo;
+import com.xmlvhy.shop.core.common.exception.ShippingException;
+import com.xmlvhy.shop.core.common.utils.ResponseResult;
+import com.xmlvhy.shop.core.pojo.Customer;
+import com.xmlvhy.shop.core.pojo.Shipping;
+import com.xmlvhy.shop.core.service.service.ShippingService;
+import com.xmlvhy.shop.core.service.vo.ShippingVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

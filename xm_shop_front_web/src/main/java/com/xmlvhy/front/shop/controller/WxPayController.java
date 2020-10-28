@@ -1,10 +1,10 @@
 package com.xmlvhy.front.shop.controller;
 
-import com.xmlvhy.shop.common.constant.WxPayConfig;
-import com.xmlvhy.shop.common.utils.*;
-import com.xmlvhy.shop.pojo.Customer;
-import com.xmlvhy.shop.pojo.Order;
-import com.xmlvhy.shop.service.OrderService;
+import com.xmlvhy.shop.core.common.constant.WxPayConfig;
+import com.xmlvhy.shop.core.common.utils.*;
+import com.xmlvhy.shop.core.pojo.Customer;
+import com.xmlvhy.shop.core.pojo.Order;
+import com.xmlvhy.shop.core.service.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

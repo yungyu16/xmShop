@@ -22,13 +22,8 @@
     </properties>
 
     <dependencies>
-        <!--依赖于dao-->
-        <dependency>
-            <groupId>com.xmlvhy.shop</groupId>
-            <artifactId>xm_shop_dao</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
+
+    <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>

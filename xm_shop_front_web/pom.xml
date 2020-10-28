@@ -23,11 +23,9 @@
     </properties>
 
     <dependencies>
-        <!--依赖于service-->
         <dependency>
             <groupId>com.xmlvhy.shop</groupId>
-            <artifactId>xm_shop_service</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>xm_shop_core</artifactId>
         </dependency>
 
         <dependency>

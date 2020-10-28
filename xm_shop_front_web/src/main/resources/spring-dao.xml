@@ -51,6 +51,6 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!--接口所在的包-->
-        <property name="basePackage" value="com.xmlvhy.shop.dao"/>
+        <property name="basePackage" value="com.xmlvhy.shop.dal"/>
     </bean>
 </beans>

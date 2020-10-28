@@ -1,13 +1,13 @@
 package com.xmlvhy.front.shop.controller;
 
-import com.xmlvhy.shop.common.exception.CustomerLoginNameIsExist;
-import com.xmlvhy.shop.common.exception.PhoneNotRegistException;
-import com.xmlvhy.shop.common.utils.CommonUtils;
-import com.xmlvhy.shop.common.utils.RedisUtil;
-import com.xmlvhy.shop.common.utils.ResponseResult;
-import com.xmlvhy.shop.pojo.Customer;
-import com.xmlvhy.shop.service.CustomerService;
-import com.xmlvhy.shop.vo.CustomerVo;
+import com.xmlvhy.shop.core.common.exception.CustomerLoginNameIsExist;
+import com.xmlvhy.shop.core.common.exception.PhoneNotRegistException;
+import com.xmlvhy.shop.core.common.utils.CommonUtils;
+import com.xmlvhy.shop.core.common.utils.RedisUtil;
+import com.xmlvhy.shop.core.common.utils.ResponseResult;
+import com.xmlvhy.shop.core.pojo.Customer;
+import com.xmlvhy.shop.core.service.service.CustomerService;
+import com.xmlvhy.shop.core.service.vo.CustomerVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
