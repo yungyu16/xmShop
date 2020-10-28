@@ -1,4 +1,4 @@
-package com.xmlvhy.shop.admin;
+package com.xmlvhy.front.shop;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
