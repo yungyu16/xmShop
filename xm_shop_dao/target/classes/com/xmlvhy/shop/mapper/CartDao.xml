@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--设置dao接口-->
-<mapper namespace="com.xmlvhy.shop.dal.CartDao">
+<mapper namespace="com.xmlvhy.shop.core.dal.mapper.CartDao">
 
     <resultMap id="CartMap" type="Cart">
         <id column="id" property="id"/>
