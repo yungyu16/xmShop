@@ -1,10 +1,6 @@
 package com.xmlvhy.shop.core.service.service.impl;
 
 import com.xmlvhy.shop.core.common.constant.OrderConstant;
-import com.xmlvhy.shop.core.common.constant.WxPayConfig;
-import com.xmlvhy.shop.core.common.utils.CommonUtils;
-import com.xmlvhy.shop.core.common.utils.HttpUtils;
-import com.xmlvhy.shop.core.common.utils.WxPayUtils;
 import com.xmlvhy.shop.core.dal.mapper.OrderDao;
 import com.xmlvhy.shop.core.dal.mapper.OrderItemDao;
 import com.xmlvhy.shop.core.pojo.Order;
@@ -18,7 +14,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author: 小莫
@@ -239,113 +236,5 @@ public class OrderServiceImpl implements OrderService {
             return true;
         }
         return false;
-    }
-
-    /**
-     * 功能描述: 微信支付业务处理，返回微信支付二维码
-     *
-     * @return java.lang.String
-     * @Author 小莫
-     * @Date 15:23 2019/04/03
-     * @Param [order, ip]
-     */
-    @Override
-    public String getWxPayUrl(Order order, String ip) throws Exception {
-        //生成签名
-        SortedMap<String, String> params = new TreeMap<>();
-        /*必传 微信分配的公众账号ID（企业号corpid即为此appId）*/
-        params.put("appid", WxPayConfig.wxpay_appId);
-        /*必传 微信支付分配的商户号*/
-        params.put("mch_id", WxPayConfig.wxpay_mer_id);
-        //随机字符串
-        params.put("nonce_str", CommonUtils.generateUUID());
-        /*商品描述，必传*/
-        params.put("body", "小莫水果");
-        /*商户订单号*/
-        params.put("out_trade_no", order.getOrderNumber());
-
-        /*总金额,单位为分,由元转化为分,*/
-        int price = (int) (order.getPrice() * 100);
-
-        params.put("total_fee", String.valueOf(price));
-
-        /*终端IP,必传*/
-        params.put("spbill_create_ip", ip);
-        /*微信回调地址*/
-        params.put("notify_url", WxPayConfig.wxpay_callback);
-        /*trade_type=NATIVE，此参数必传。此id为二维码中包含的商品ID，商户自行定义*/
-        params.put("trade_type", "NATIVE");
-
-        //sign 签名
-        String sign = WxPayUtils.createSign(params, WxPayConfig.wxpay_key);
-        params.put("sign", sign);
-
-        //map转xml
-        String mapToXml = WxPayUtils.mapToXml(params);
-
-        System.out.println("mapToxml= " + mapToXml);
-        //统一下单
-
-        String payResult = HttpUtils.doPost(WxPayConfig.UNIFIED_ORDER_URL, mapToXml, 4000);
-
-        if (null == payResult) {
-            return null;
-        }
-
-        Map<String, String> payResultMap = WxPayUtils.xmlToMap(payResult);
-        System.out.println("payResult= " + payResultMap.toString());
-        if (payResultMap != null) {
-            return payResultMap.get("code_url");
-        }
-        return null;
-    }
-
-    public Map<String, String> getWxPayResultMap(Order order, String ip) throws Exception {
-        //生成签名
-        SortedMap<String, String> params = new TreeMap<>();
-        /*必传 微信分配的公众账号ID（企业号corpid即为此appId）*/
-        params.put("appid", WxPayConfig.wxpay_appId);
-        /*必传 微信支付分配的商户号*/
-        params.put("mch_id", WxPayConfig.wxpay_mer_id);
-        //随机字符串
-        params.put("nonce_str", CommonUtils.generateUUID());
-        /*商品描述，必传*/
-        params.put("body", "小莫水果");
-        /*商户订单号*/
-        params.put("out_trade_no", order.getOrderNumber());
-
-        /*总金额,单位为分,由元转化为分,*/
-        int price = (int) (order.getPrice() * 100);
-
-        params.put("total_fee", String.valueOf(price));
-
-        /*终端IP,必传*/
-        params.put("spbill_create_ip", ip);
-        /*微信回调地址*/
-        params.put("notify_url", WxPayConfig.wxpay_callback);
-        /*trade_type=NATIVE，此参数必传。此id为二维码中包含的商品ID，商户自行定义*/
-        params.put("trade_type", "NATIVE");
-
-        //sign 签名
-        String sign = WxPayUtils.createSign(params, WxPayConfig.wxpay_key);
-        params.put("sign", sign);
-
-        //map转xml
-        String mapToXml = WxPayUtils.mapToXml(params);
-
-        System.out.println("mapToxml= " + mapToXml);
-        //统一下单
-
-        String payResult = HttpUtils.doPost(WxPayConfig.UNIFIED_ORDER_URL, mapToXml, 4000);
-
-        if (null == payResult) {
-            return null;
-        }
-
-        Map<String, String> payResultMap = WxPayUtils.xmlToMap(payResult);
-        if (payResultMap != null) {
-            return payResultMap;
-        }
-        return null;
     }
 }

@@ -1,6 +1,6 @@
 package com.xmlvhy.shop.core.service.service.impl;
 
-import com.xmlvhy.shop.core.common.utils.FtpUtils;
+import com.xmlvhy.shop.core.common.utils.FileUtils;
 import com.xmlvhy.shop.core.common.utils.StringUtil;
 import com.xmlvhy.shop.core.dal.mapper.ProductDao;
 import com.xmlvhy.shop.core.dal.params.ProductParam;
@@ -8,7 +8,6 @@ import com.xmlvhy.shop.core.pojo.Product;
 import com.xmlvhy.shop.core.pojo.ProductType;
 import com.xmlvhy.shop.core.service.dto.ProductDto;
 import com.xmlvhy.shop.core.service.service.ProductService;
-import org.apache.commons.fileupload.FileUploadException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -66,7 +65,7 @@ public class ProductServiceImpl implements ProductService {
      * @Param [productDto]
      */
     @Override
-    public int addProduct(ProductDto productDto) throws FileUploadException {
+    public int addProduct(ProductDto productDto) {
         //1.文件上传
         //String fileName = StringUtil.reFileName(productDto.getFileName());
         //String filePath = productDto.getUploadPath()+"\\"+ fileName;
@@ -83,10 +82,10 @@ public class ProductServiceImpl implements ProductService {
 
         String filePath = path + "/" + timePath;
         String fileName = StringUtil.reFileName(productDto.getFileName());
-        boolean flag = FtpUtils.uploadFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
+        boolean flag = FileUtils.putFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
 
         if (!flag) {
-            throw new FileUploadException("文件上传失败");
+            throw new IllegalStateException("文件上传失败");
         }
 
         //2.保存到数据库,将 dto 转化为 pojo
@@ -162,7 +161,7 @@ public class ProductServiceImpl implements ProductService {
      * @Param [productDto]
      */
     @Override
-    public int modifyProduct(ProductDto productDto) throws FileUploadException {
+    public int modifyProduct(ProductDto productDto) {
         //1.文件上传
         //String fileName = StringUtil.reFileName(productDto.getFileName());
         //String filePath = productDto.getUploadPath()+"\\"+ fileName;
@@ -177,10 +176,10 @@ public class ProductServiceImpl implements ProductService {
         String filePath = path + "/" + timePath;
         String fileName = StringUtil.reFileName(productDto.getFileName());
 
-        boolean flag = FtpUtils.uploadFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
+        boolean flag = FileUtils.putFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
 
         if (!flag) {
-            throw new FileUploadException("文件上传失败");
+            throw new IllegalStateException("文件上传失败");
         }
 
         //2.保存到数据库,将 dto 转化为 pojo

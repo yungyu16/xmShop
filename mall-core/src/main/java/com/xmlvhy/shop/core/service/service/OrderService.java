@@ -32,8 +32,4 @@ public interface OrderService {
     Boolean modifyOrderStatusByCustomerIdAndOrderNo(Integer id, String out_trade_no);
 
     Boolean modifyOrderStatusByOrderNo(String out_trade_no);
-
-    String getWxPayUrl(Order order, String ip) throws Exception;
-
-    Map<String, String> getWxPayResultMap(Order order, String ip) throws Exception;
 }

@@ -3,7 +3,6 @@ package com.xmlvhy.shop.core.service.service;
 import com.xmlvhy.shop.core.dal.params.ProductParam;
 import com.xmlvhy.shop.core.pojo.Product;
 import com.xmlvhy.shop.core.service.dto.ProductDto;
-import org.apache.commons.fileupload.FileUploadException;
 
 import java.io.OutputStream;
 import java.util.List;
@@ -18,7 +17,7 @@ public interface ProductService {
     /**
      * 功能描述: 添加商品
      */
-    int addProduct(ProductDto productDto) throws FileUploadException;
+    int addProduct(ProductDto productDto);
 
     /**
      * 功能描述: 检测商品名称是否存在
@@ -38,7 +37,7 @@ public interface ProductService {
     /**
      * 功能描述: 更新商品信息
      */
-    int modifyProduct(ProductDto productDto) throws FileUploadException;
+    int modifyProduct(ProductDto productDto);
 
     /**
      * 功能描述: 根据id 删除商品
