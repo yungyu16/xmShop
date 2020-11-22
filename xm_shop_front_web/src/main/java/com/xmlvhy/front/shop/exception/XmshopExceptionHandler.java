@@ -91,10 +91,7 @@ public class XmshopExceptionHandler {
             log.error(name + "---" + request.getParameter(name));
         }
 
-        StackTraceElement[] error = ex.getStackTrace();
-        for (StackTraceElement stackTraceElement : error) {
-            log.error(stackTraceElement.toString());
-        }
+        log.error("error", ex);
         log.error("************************异常结束*******************************");
     }
 }
