@@ -1,6 +1,5 @@
 package com.xmlvhy.shop.core.service.service.impl;
 
-import com.xmlvhy.shop.core.common.utils.FileUtils;
 import com.xmlvhy.shop.core.common.utils.StringUtil;
 import com.xmlvhy.shop.core.dal.mapper.ProductDao;
 import com.xmlvhy.shop.core.dal.params.ProductParam;
@@ -82,11 +81,12 @@ public class ProductServiceImpl implements ProductService {
 
         String filePath = path + "/" + timePath;
         String fileName = StringUtil.reFileName(productDto.getFileName());
-        boolean flag = FileUtils.putFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
-
-        if (!flag) {
-            throw new IllegalStateException("文件上传失败");
-        }
+        //TODO 保存商品图片
+        //boolean flag = FileUtils.putFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
+        //
+        //if (!flag) {
+        //    throw new IllegalStateException("文件上传失败");
+        //}
 
         //2.保存到数据库,将 dto 转化为 pojo
         Product product = new Product();
@@ -176,11 +176,11 @@ public class ProductServiceImpl implements ProductService {
         String filePath = path + "/" + timePath;
         String fileName = StringUtil.reFileName(productDto.getFileName());
 
-        boolean flag = FileUtils.putFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
-
-        if (!flag) {
-            throw new IllegalStateException("文件上传失败");
-        }
+        //TODO 保存商品图片
+        //boolean flag = FileUtils.putFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
+        //if (!flag) {
+        //    throw new IllegalStateException("文件上传失败");
+        //}
 
         //2.保存到数据库,将 dto 转化为 pojo
         Product product = new Product();

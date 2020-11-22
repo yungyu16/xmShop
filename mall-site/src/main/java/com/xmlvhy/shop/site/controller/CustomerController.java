@@ -8,7 +8,6 @@ import com.xmlvhy.shop.core.pojo.Customer;
 import com.xmlvhy.shop.core.service.service.CustomerService;
 import com.xmlvhy.shop.core.service.vo.CustomerVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.ObjectUtils;
@@ -31,8 +30,6 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
-    @Autowired
-    private StringRedisTemplate redisTemplate;
 
     /**
      * 功能描述: 通过账户名密码登录
@@ -90,12 +87,10 @@ public class CustomerController {
             Customer customer = customerService.findByPhone(phone);
 
             //判断验证码是否存在
-            //Object code = session.getAttribute("smsVerifyCode");
-            //TODO:/*从redis中获取验证码*/
-            String code = redisTemplate.boundValueOps(session.getId()).get();
+            Object code = session.getAttribute("smsVerifyCode");
             if (!ObjectUtils.isEmpty(code)) {
                 //判断验证码是否正确
-                if (Integer.parseInt(code) == verifyCode) {
+                if (Integer.parseInt(((String) code)) == verifyCode) {
                     /*将用户信息放到session中*/
                     customer.setPassword(null);
                     session.setAttribute("customer", customer);
