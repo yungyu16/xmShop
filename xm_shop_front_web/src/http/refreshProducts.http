@@ -1,3 +1,19 @@
-http://localhost:8080/admin/refresh-products?keyword=得力 办公用品&typeName=办公用品
+###
+GET http://localhost:8080/admin/refresh-products?keyword=得力 文具&typeName=办公用品
+
+###
+GET http://localhost:8080/admin/refresh-products?keyword=洗发水&typeName=日用百货
+
+###
+GET http://localhost:8080/admin/refresh-products?keyword=沐浴露&typeName=日用百货
+
+###
+GET http://localhost:8080/admin/refresh-products?keyword=微单&typeName=摄影器材
+
+###
+GET http://localhost:8080/admin/refresh-products?keyword=摄影三脚架&typeName=摄影器材
+
+###
+GET http://localhost:8080/admin/refresh-products?keyword=打印机&typeName=办公用品
 
 ###

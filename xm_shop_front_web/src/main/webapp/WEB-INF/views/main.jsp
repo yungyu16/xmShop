@@ -102,9 +102,9 @@
             </div>
         </div>
 
-    <%--TODO:商品展示没有加分页功能，还有数据的回显功能--%>
-    <!-- 中间展示的内容 start -->
-    <%--<div class="container-fluid" style="background-color: #FFF8DC">--%>
+        <%--TODO:商品展示没有加分页功能，还有数据的回显功能--%>
+        <!-- 中间展示的内容 start -->
+        <%--<div class="container-fluid" style="background-color: #FFF8DC">--%>
         <div class="container">
             <div class="container">
                 <div class="row">
@@ -179,6 +179,14 @@
                     </div>
                 </c:forEach>
             </div>
+            <ul class="pagination">
+                <c:if test="${curPage > 1}">
+                    <li class="page-item"><a class="page-link" href="searchAllProducts?pageName=${curPage - 1}">上一页</a>
+                    </li>
+                </c:if>
+                <li class="page-item"><a class="page-link" href="searchAllProducts?pageName=${curPage + 1}">下一页</a>
+                </li>
+            </ul>
         </div>
     </div>
     <!-- 中间展示的内容 end-->

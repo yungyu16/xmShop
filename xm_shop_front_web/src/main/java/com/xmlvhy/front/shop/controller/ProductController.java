@@ -33,46 +33,50 @@ public class ProductController {
     private ProductService productService;
 
     /**
-     *功能描述: 加载所有商品列表
+     * 功能描述: 加载所有商品列表
+     *
+     * @return java.lang.String
      * @Author 小莫
      * @Date 9:47 2019/03/14
      * @Param [productParam, pageName, model]
-     * @return java.lang.String
      */
     @RequestMapping("/searchAllProducts")
-    public String searchAllProducts(ProductParam productParam, Integer pageName, Model model){
+    public String searchAllProducts(ProductParam productParam, Integer pageName, Model model) {
         if (ObjectUtils.isEmpty(pageName)) {
             pageName = PaginationConstant.PAGE_NUM;
         }
-        PageHelper.startPage(pageName,PaginationConstant.FRONT_PAGE_SIZE);
+        PageHelper.startPage(pageName, PaginationConstant.FRONT_PAGE_SIZE);
         List<Product> productList = productService.findByProductParams(productParam);
         PageInfo<Product> pageInfo = new PageInfo<>(productList);
-        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("curPage", pageName);
         return "main";
     }
 
     /**
-     *功能描述: 页面初始化
+     * 功能描述: 页面初始化
+     *
+     * @return java.util.List<com.xmlvhy.shop.pojo.ProductType>
      * @Author 小莫
      * @Date 9:47 2019/03/14
      * @Param []
-     * @return java.util.List<com.xmlvhy.shop.pojo.ProductType>
      */
     @ModelAttribute("productTypes")
-    public List<ProductType> loadProductTypes(){
+    public List<ProductType> loadProductTypes() {
         List<ProductType> productTypes = productTypeService.findAllEnableProductTypes();
         return productTypes;
     }
 
     /**
-     *功能描述: 展示商品详情
+     * 功能描述: 展示商品详情
+     *
+     * @return com.xmlvhy.shop.common.utils.ResponseResult
      * @Author 小莫
      * @Date 14:46 2019/03/19
      * @Param [model, id]
-     * @return com.xmlvhy.shop.common.utils.ResponseResult
      */
     @RequestMapping("showProductDetail")
-    public String showProductDetail(Model model,Integer id) {
+    public String showProductDetail(Model model, Integer id) {
 
         Product product = productService.findProductById(id);
         if (product != null) {

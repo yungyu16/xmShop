@@ -12,7 +12,6 @@ import java.net.URLEncoder;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -24,9 +23,10 @@ public class JdProductCollector implements ProductCollector {
     @Override
     public List<ProductItem> collect(String keyword) {
         String url = "https://search.jd.com/Search?keyword=" + URLEncoder.encode(keyword, "utf8");
-        Document document = Jsoup.connect(url)
+        String body = Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36")
-                .get();
+                .execute().body();
+        Document document = Jsoup.parse(body);
         Element gl = document.select("ul.gl-warp").get(0);
         Elements lis = gl.select("li");
         return lis.stream()
