@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Author: songjialin
  */
 @SpringBootApplication(scanBasePackages = "com.xmlvhy.shop")
-@MapperScan("com.xmlvhy.shop.admin.dal.mapper")
+@MapperScan("com.xmlvhy.shop.core.dal.mapper")
 public class AppStarter {
     public static void main(String[] args) {
         SpringApplication.run(AppStarter.class, args);

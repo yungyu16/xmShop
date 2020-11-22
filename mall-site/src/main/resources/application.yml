@@ -9,5 +9,5 @@ spring:
       suffix: .jsp
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: com.xmlvhy.shop.admin.pojo
+  type-aliases-package: com.xmlvhy.shop.core.pojo
   config-location: classpath:mybatis/mybatis-config.xml

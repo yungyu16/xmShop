@@ -52,5 +52,4 @@ public class SpringMvcConfig extends WebMvcConfigurationSupport {
                 .excludePathPatterns("/js/**")
                 .excludePathPatterns("/layer/**");
     }
-
 }

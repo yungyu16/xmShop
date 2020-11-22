@@ -34,27 +34,6 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
-    @Value("${biz.ftp.host}")
-    private String host;
-
-    @Value("${biz.ftp.port}")
-    private Integer port;
-
-    @Value("${biz.ftp.username}")
-    private String username;
-
-    @Value("${biz.ftp.password}")
-    private String password;
-
-    @Value("${biz.ftp.basePath}")
-    private String basePath;
-
-    @Value("${biz.ftp.path}")
-    private String path;
-
-    @Value("${biz.ftp.baseUrl}")
-    private String baseUrl;
-
     /**
      * 功能描述: 添加商品
      *
@@ -79,7 +58,7 @@ public class ProductServiceImpl implements ProductService {
         //按照时间创建文件夹
         String timePath = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
-        String filePath = path + "/" + timePath;
+//        String filePath = path + "/" + timePath;
         String fileName = StringUtil.reFileName(productDto.getFileName());
         //TODO 保存商品图片
         //boolean flag = FileUtils.putFile(host, port, username, password, basePath, filePath, fileName, productDto.getInputStream());
@@ -94,7 +73,7 @@ public class ProductServiceImpl implements ProductService {
         //product.setImage(filePath);
         //地址修改为服务器上的http地址
         //product.setImage(baseUrl+"/" + filePath + "/" + fileName);
-        product.setImage(baseUrl + "/" + timePath + "/" + fileName);
+//        product.setImage(baseUrl + "/" + timePath + "/" + fileName);
 
 
         ProductType productType = new ProductType();
@@ -173,7 +152,7 @@ public class ProductServiceImpl implements ProductService {
         //}
 
         String timePath = new SimpleDateFormat("yyyyMMdd").format(new Date());
-        String filePath = path + "/" + timePath;
+//        String filePath = path + "/" + timePath;
         String fileName = StringUtil.reFileName(productDto.getFileName());
 
         //TODO 保存商品图片
@@ -187,7 +166,7 @@ public class ProductServiceImpl implements ProductService {
         BeanUtils.copyProperties(productDto, product);
         //product.setImage(filePath);
         //https://www.xmlvhy.com/images/20190301512474268.jpg
-        product.setImage(baseUrl + "/" + timePath + "/" + fileName);
+//        product.setImage(baseUrl + "/" + timePath + "/" + fileName);
 
         ProductType productType = new ProductType();
         productType.setId(productDto.getProductTypeId());
