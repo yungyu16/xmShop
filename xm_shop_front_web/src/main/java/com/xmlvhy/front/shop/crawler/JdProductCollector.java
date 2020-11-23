@@ -13,15 +13,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Supplier;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 public class JdProductCollector implements ProductCollector {
-    private static RuntimeException ex = new RuntimeException();
-    private static Pattern pattern = Pattern.compile("/n[\\d]/");
-    private static Pattern jdPattern = Pattern.compile("京东.*?\\s+");
+    public static final RuntimeException ex = new RuntimeException();
+    private static final Supplier<RuntimeException> exThrower = () -> ex;
+    private static final Pattern pattern = Pattern.compile("/n[\\d]/");
+    private static final Pattern jdPattern = Pattern.compile("京东.*?\\s+");
 
     @SneakyThrows
     public static void main(String[] args) {
@@ -73,10 +75,10 @@ public class JdProductCollector implements ProductCollector {
                         String price = li.select(".p-price i").text();
                         String desc = li.select(".p-name .promo-words").text();
                         String img = li.select(".p-img img").get(0).attr("data-lazy-img");
-                        name = validateField(name).orElseThrow(() -> ex);
-                        price = validateField(price).orElseThrow(() -> ex);
-                        desc = validateField(desc).orElseThrow(() -> ex);
-                        img = validateField(img).orElseThrow(() -> ex);
+                        name = validateField(name).orElseThrow(exThrower);
+                        price = validateField(price).orElseThrow(exThrower);
+                        desc = validateField(desc).orElseThrow(exThrower);
+                        img = validateField(img).orElseThrow(exThrower);
                         if (!img.startsWith("http")) {
                             if (img.startsWith("//")) {
                                 img = "http:" + img;
