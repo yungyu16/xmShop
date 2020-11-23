@@ -8,7 +8,6 @@ import com.xmlvhy.shop.pojo.ProductType;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -87,10 +86,11 @@ public class AdminController {
     }
 
     private String parseIso8859(String str) {
-        if (str == null || str.isEmpty()) {
-            return str;
-        }
-        return StringUtils.newStringUtf8(StringUtils.getBytesIso8859_1(str));
+        return str;
+        // if (str == null || str.isEmpty()) {
+        //     return str;
+        // }
+        // return StringUtils.newStringUtf8(StringUtils.getBytesIso8859_1(str));
     }
 
     @Data

@@ -50,6 +50,7 @@ public class ProductController {
         PageInfo<Product> pageInfo = new PageInfo<>(productList);
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("curPage", pageName);
+        model.addAttribute("productParam", productParam);
         return "main";
     }
 

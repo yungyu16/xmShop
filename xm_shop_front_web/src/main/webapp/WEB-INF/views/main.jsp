@@ -123,13 +123,16 @@
                               method="post">
                             <div class="form-group">
                                 <label class="control-label">商品：</label>
-                                <input type="text" class="form-control" placeholder="商品名称" name="name">
+                                <input type="text" class="form-control" placeholder="商品名称" name="name"
+                                       value="${productParam.name}">
                             </div>
                             &nbsp;
                             <div class="form-group">
                                 <label class="control-label">价格：</label>
-                                <input type="text" class="form-control" placeholder="最低价格" name="minPrice"> --
-                                <input type="text" class="form-control" placeholder="最高价格" name="maxPrice">
+                                <input type="text" class="form-control" placeholder="最低价格" name="minPrice"
+                                       value="${productParam.minPrice}"> --
+                                <input type="text" class="form-control" placeholder="最高价格" name="maxPrice"
+                                       value="${productParam.maxPrice}">
                             </div>
                             &nbsp;
                             <div class="form-group">
@@ -137,7 +140,7 @@
                                 <select class="form-control input-sm" name="productTypeId">
                                     <option value="-1" selected="selected">查询全部</option>
                                     <c:forEach items="${productTypes}" var="productType">
-                                        <option value="${productType.id}">${productType.name}</option>
+                                        <option value="${productType.id}" ${productParam.productTypeId == productType.id ? 'selected' : ''}>${productType.name}</option>
                                     </c:forEach>
                                 </select>
                             </div>
