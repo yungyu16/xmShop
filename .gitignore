@@ -63,7 +63,6 @@ build/
 *.pydevproject
 .project
 .metadata
-bin/**
 tmp/**
 tmp/**/*
 *.tmp
@@ -104,6 +103,7 @@ local.properties
 Thumbs.db
 ehthumbs.db
 
+# Folder config file
 # Folder config file
 Desktop.ini
 
