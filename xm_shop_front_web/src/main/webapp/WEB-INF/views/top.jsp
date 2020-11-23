@@ -6,7 +6,6 @@
 <script src="${pageContext.request.contextPath}/js/bootstrapValidator.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/template.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/zshop.css"/>
-
 <%--TODO:artTemplate的使用--%>
 <script id="welcome" type="text/html">
     <li class="userName">

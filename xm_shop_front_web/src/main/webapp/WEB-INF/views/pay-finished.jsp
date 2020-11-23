@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>支付成功</title>
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/site-logo.png"
+          media="screen"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/animate.min.css"/>
