@@ -1,8 +1,10 @@
 package com.xmlvhy.front.shop.controller;
 
+import com.beust.jcommander.internal.Maps;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.xmlvhy.shop.common.constant.PaginationConstant;
+import com.xmlvhy.shop.dao.BannerDao;
 import com.xmlvhy.shop.params.ProductParam;
 import com.xmlvhy.shop.pojo.Product;
 import com.xmlvhy.shop.pojo.ProductType;
@@ -15,7 +17,11 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Author: 小莫
@@ -32,6 +38,9 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private BannerDao bannerDao;
+
     /**
      * 功能描述: 加载所有商品列表
      *
@@ -41,7 +50,7 @@ public class ProductController {
      * @Param [productParam, pageName, model]
      */
     @RequestMapping("/searchAllProducts")
-    public String searchAllProducts(ProductParam productParam, Integer pageName, Model model) {
+    public String searchAllProducts(HttpServletRequest httpRequest, ProductParam productParam, Integer pageName, Model model) {
         if (ObjectUtils.isEmpty(pageName)) {
             pageName = PaginationConstant.PAGE_NUM;
         }
@@ -51,6 +60,15 @@ public class ProductController {
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("curPage", pageName);
         model.addAttribute("productParam", productParam);
+        Map<String, String> banners = Maps.newHashMap();
+        banners.put("banner1", httpRequest.getContextPath() + "/images/banner1.jpg");
+        banners.put("banner2", httpRequest.getContextPath() + "/images/banner2.jpg");
+        banners.put("banner3", httpRequest.getContextPath() + "/images/banner3.jpg");
+        banners.put("banner4", httpRequest.getContextPath() + "/images/banner4.jpg");
+        AtomicInteger idx = new AtomicInteger(1);
+        bannerDao.collectAllBanner()
+                .forEach(it -> banners.put("banner" + idx.getAndIncrement(), it));
+        model.addAttribute("banners", banners);
         return "main";
     }
 
@@ -77,12 +95,15 @@ public class ProductController {
      * @Param [model, id]
      */
     @RequestMapping("showProductDetail")
-    public String showProductDetail(Model model, Integer id) {
+    public String showProductDetail(HttpServletRequest httpRequest, Model model, Integer id) {
 
         Product product = productService.findProductById(id);
         if (product != null) {
             model.addAttribute("product", product);
         }
+        String defaultBanner = bannerDao.getDefaultBanner();
+        defaultBanner = Optional.ofNullable(defaultBanner).orElse(httpRequest.getContextPath() + "/images/banner.jpg");
+        model.addAttribute("banner", defaultBanner);
         return "productDetail";
     }
 }

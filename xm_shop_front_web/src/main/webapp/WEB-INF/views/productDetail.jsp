@@ -125,7 +125,7 @@
 <!--banner start-->
 <div class="row">
     <div class="container">
-        <img src="${pageContext.request.contextPath}/images/banner.jpg" class="banner" alt="">
+        <img src="${banner}" class="banner" alt="">
     </div>
 </div>
 <!--banner end-->

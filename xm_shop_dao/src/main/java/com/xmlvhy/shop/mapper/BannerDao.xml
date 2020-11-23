@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xmlvhy.shop.dao.BannerDao">
+    <select id="collectAllBanner" resultType="java.lang.String">
+        select img_url
+        from t_banner
+        where status = 1
+        order by id
+        limit 4;
+    </select>
+    <select id="getDefaultBanner" resultType="java.lang.String">
+        select img_url
+        from t_banner
+        where status = 1
+          and default_flag = 1
+        order by id
+        limit 1;
+    </select>
+</mapper>
