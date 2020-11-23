@@ -171,10 +171,10 @@
 
                                     <div class="user clearfix pull-left"><span>¥ </span>${product.price}</div>
 
-                                    <p><h4 class="myH4 productname"><a href="#">${product.name}</a></h4></p>
+                                    <p><h4 class="myH4 productname"><a href="#">${product.name}</a></h4>
 
-                                    <div>
-                                        <a class="my" href="#">${product.info}</a>
+                                    <div class="my">
+                                        <a class="line-2" href="#" title=${product.info}>${product.info}</a>
                                     </div>
                                         <%--<div class="attention pull-right">--%>
                                         <%--<i class="icon iconfont icon-gouwuche"></i>--%>
