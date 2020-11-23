@@ -1,4 +1,4 @@
-docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2  -w /usr/src/mymaven maven:3-adoptopenjdk-8  mvn clean package
+docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2  -w /usr/src/mymaven maven:3-adoptopenjdk-8  mvn -Dmaven.test.skip=true clean package
 if [ $# -gt 1 ]; then
   echo 请指定需要打包的系统 b=后台系统 f=商城系统
   exit 1
