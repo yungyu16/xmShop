@@ -1,4 +1,4 @@
-if [ $# -gt 1 ]; then
+if [ $# -lt 1 ]; then
   echo 请指定需要打包的系统 b=后台系统 f=商城系统
   exit 1
 fi
