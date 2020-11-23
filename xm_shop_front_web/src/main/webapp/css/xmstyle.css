@@ -10,6 +10,15 @@
     text-decoration: underline !important;
 }
 
+.line-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 .myH4 {
     height: 20px !important;
     letter-spacing: 1px;
