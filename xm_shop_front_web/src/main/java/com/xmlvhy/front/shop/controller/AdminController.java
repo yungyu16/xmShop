@@ -31,7 +31,7 @@ public class AdminController {
     private final ProductDao productDao;
 
     @RequestMapping("add-products")
-    public String refreshProducts(RefreshActionParam actionParam) {
+    public String addProducts(RefreshActionParam actionParam) {
         log.info("请求参数：{}", JSON.toJSONString(actionParam));
         if (CollectionUtils.isEmpty(collectors)) {
             return "no any collector";
