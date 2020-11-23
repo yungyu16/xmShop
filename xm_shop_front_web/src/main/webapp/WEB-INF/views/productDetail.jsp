@@ -123,14 +123,14 @@
 <!-- 导航栏 end -->
 
 <!--banner start-->
-<div class="row">
+<%--<div class="row">
     <div class="container">
         <img src="${banner}" class="banner" alt="">
     </div>
-</div>
+</div>--%>
 <!--banner end-->
 
-<div class="row" style="margin-top: 50px">
+<div class="row" style="margin-top: 20%">
     <div class="container">
         <div class="col-sm-6" style="padding: 0">
             <div class="imgShow">

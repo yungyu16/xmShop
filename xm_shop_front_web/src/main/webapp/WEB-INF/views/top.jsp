@@ -38,7 +38,7 @@
         <a href="#" data-toggle="modal" data-target="#loginModal">登陆</a>
     </li>
     <li>
-        <a href="#" data-toggle="modal" data-target="#registModal">注册</a>
+        <a href="#" data-toggle="modal" data-target="#registModal"><span style="color: red">注册</span></a>
     </li>
 </script>
 
@@ -535,7 +535,7 @@
                             <a href="#" data-toggle="modal" data-target="#loginModal">登陆</a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#registModal">注册</a>
+                            <a href="#" data-toggle="modal" data-target="#registModal"><span style="color: red">注册</span></a>
                         </li>
                     </c:when>
                     <%--TODO:否则走 otherwise 中--%>
