@@ -1,5 +1,6 @@
 package com.xmlvhy.front.shop.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.xmlvhy.front.shop.crawler.ProductCollector;
 import com.xmlvhy.shop.dao.ProductDao;
 import com.xmlvhy.shop.dao.ProductTypeDao;
@@ -30,6 +31,7 @@ public class AdminController {
 
     @RequestMapping("add-products")
     public String refreshProducts(RefreshActionParam actionParam) {
+        log.info("请求参数：{}", JSON.toJSONString(actionParam));
         if (CollectionUtils.isEmpty(collectors)) {
             return "no any collector";
         }
@@ -39,7 +41,6 @@ public class AdminController {
         if (keyword == null || keyword.length() == 0) {
             return "keyword is null";
         }
-        keyword = parseIso8859(keyword);
         ProductType productType;
         if (typeId != null) {
             productType = productTypeDao.selectProductTypeById(typeId);
@@ -47,7 +48,6 @@ public class AdminController {
             if (typeName == null || typeName.length() == 0) {
                 return "typeName is null";
             }
-            typeName = parseIso8859(typeName);
             productType = productTypeDao.selectProductTypeByName(typeName);
             if (productType == null) {
                 productTypeDao.insertProductType(typeName, 1);
@@ -83,14 +83,6 @@ public class AdminController {
             }
         });
         return "finish! total size:" + products.size();
-    }
-
-    private String parseIso8859(String str) {
-        return str;
-        // if (str == null || str.isEmpty()) {
-        //     return str;
-        // }
-        // return StringUtils.newStringUtf8(StringUtils.getBytesIso8859_1(str));
     }
 
     @Data
