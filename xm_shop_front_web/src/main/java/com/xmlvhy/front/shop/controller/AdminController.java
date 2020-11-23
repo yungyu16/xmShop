@@ -13,6 +13,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -69,7 +70,7 @@ public class AdminController {
                 .map(it -> {
                     Product product = new Product();
                     product.setName(it.getItemName());
-                    product.setPrice(it.getItemPrice());
+                    product.setPrice(BigDecimal.valueOf(it.getItemPrice()));
                     product.setInfo(it.getItemDesc());
                     product.setImage(it.getItemImage());
                     product.setProductType(finalProductType);

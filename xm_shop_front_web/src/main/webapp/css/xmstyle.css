@@ -16,6 +16,20 @@
     font-weight: normal;
 }
 
+.productname {
+    border-right: 1px;
+    height: 18px !important;
+    width: 100%;
+    /*    letter-spacing: 1px;
+        font-weight: normal;*/
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
 .banner {
     width: 100%;
 }

@@ -48,7 +48,7 @@ public class CartServiceImpl implements CartService {
             Cart cart = new Cart();
             Product product = productDao.selectProductById(cartVo.getProductId());
             //计算总价
-            Double totalPrice = product.getPrice() * cartVo.getProductNum();
+            Double totalPrice = product.getPrice().doubleValue() * cartVo.getProductNum();
 
             BeanUtils.copyProperties(cartVo,cart);
             cart.setTotalPrice(totalPrice);
@@ -70,7 +70,7 @@ public class CartServiceImpl implements CartService {
         Product pd = productDao.selectProductById(cartVo.getProductId());
 
         //更新商品总价格
-        Double priceSum = pd.getPrice() * productSums;
+        Double priceSum = pd.getPrice().doubleValue() * productSums;
 
         int rows = cartDao.updateCartNumAndTotalPriceById(cartResult.getId(), productSums,priceSum);
         if (rows >= 1) {
@@ -152,7 +152,7 @@ public class CartServiceImpl implements CartService {
 
         //拿到该商品信息，计算修改数量后的总价格
         Cart cart = cartDao.selectCartByCustomerIdAndCartId(id, cartId);
-        Double totalPrice = (cart.getProduct().getPrice()) * productNum;
+        Double totalPrice = (cart.getProduct().getPrice().doubleValue()) * productNum;
 
         int rows = cartDao.updateProductNumAndPriceByCartIdAndCustomerIdAndStatus(cartId, productNum,
                 id, CartConstant.CART_PRODUCT_STATUS_VALID,totalPrice);
@@ -207,7 +207,7 @@ public class CartServiceImpl implements CartService {
             Cart cart = new Cart();
             Product product = productDao.selectProductById(cartVo.getProductId());
             //计算总价
-            Double totalPrice = product.getPrice() * cartVo.getProductNum();
+            Double totalPrice = product.getPrice().doubleValue() * cartVo.getProductNum();
 
             BeanUtils.copyProperties(cartVo,cart);
             cart.setTotalPrice(totalPrice);
@@ -229,7 +229,7 @@ public class CartServiceImpl implements CartService {
         Product pd = productDao.selectProductById(cartVo.getProductId());
 
         //更新商品总价格
-        Double priceSum = pd.getPrice() * productSums;
+        Double priceSum = pd.getPrice().doubleValue() * productSums;
 
         int rows = cartDao.updateCartNumAndTotalPriceById(cartResult.getId(), productSums,priceSum);
         if (rows >= 1) {

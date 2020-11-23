@@ -168,8 +168,11 @@
                                     <div class="add-padding-bottom">
                                         <img src="${product.image}" class="shopImg">
                                     </div>
-                                    <h4 class="myH4"><a href="#">${product.name}</a></h4>
-                                    <div class="user clearfix pull-right"><span>¥ </span>${product.price}</div>
+
+                                    <div class="user clearfix pull-left"><span>¥ </span>${product.price}</div>
+
+                                    <p><h4 class="myH4 productname"><a href="#">${product.name}</a></h4></p>
+
                                     <div>
                                         <a class="my" href="#">${product.info}</a>
                                     </div>

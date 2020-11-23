@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * Author: 小莫
@@ -21,7 +22,7 @@ public class Product implements Serializable{
     /*商品名称*/
     private String name;
     /*商品价格*/
-    private Double price;
+    private BigDecimal price;
     /*商品简介*/
     private String info;
     /*商品的图片*/
