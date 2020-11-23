@@ -1,6 +1,15 @@
+#! /bin/bash
+
 if [ $# -lt 1 ]; then
   echo 请指定需要打包的系统 b=后台系统 f=商城系统
   exit 1
+fi
+
+if type git >/dev/null 2>&1; then
+  echo 'docker exists'
+else
+  echo 'docker not exists,start install... '
+  curl -fsSL https://get.docker.com | sh
 fi
 
 docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2  -w /usr/src/mymaven maven:3-adoptopenjdk-8  mvn -Dmaven.test.skip=true clean package
