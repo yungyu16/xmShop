@@ -24,3 +24,7 @@ GET http://{{HostAndPort}}/admin/add-products?keyword=t恤男&typeName=服装服
 GET http://{{HostAndPort}}/admin/add-products?keyword=洗发水控油&typeName=日用百货
 
 ###
+
+GET http://{{HostAndPort}}/admin/add-products?keyword=器械&typeName=体育用品
+
+###
