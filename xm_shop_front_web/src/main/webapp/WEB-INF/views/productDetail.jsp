@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,18 +97,17 @@
             // console.log(productId);
 
             //发送一个ajax 请求，到后端直接放入购物车中
-            $.post(
-                '${pageContext.request.contextPath}/front/order/redirectBuyToCart',
-                {'count':count,'productId': productId},
+            $.post('${pageContext.request.contextPath}/front/order/redirectBuyToCart',
+                {'count': count, 'productId': productId},
                 function (result) {
-                    if (result.status == 1) {
+                    if (result.status === 1) {
                         //表示商品成功放入购物车中
                         console.log(result);
-                        location.replace('${pageContext.request.contextPath}/front/order/redirectConfirmOrder?cartId='+result.data);
-                    }else {
-                        layer.msg(result.message,{
-                           time: 1500,
-                           skin: 'errorMsg'
+                        location.replace('${pageContext.request.contextPath}/front/order/redirectConfirmOrder?cartId=' + result.data);
+                    } else {
+                        layer.msg(result.message, {
+                            time: 1500,
+                            skin: 'errorMsg'
                         });
                     }
                 });
@@ -139,6 +139,7 @@
         </div>
         <div class="col-sm-6">
             <span class="title">${product.name}</span>
+            <span class="productDesc">${product.info}</span>
             <div class="pic">
                 <span style="margin-left: 30px;">价格:</span>
                 <span class="priceIcon">￥</span>
@@ -170,7 +171,9 @@
 
             <div class="shop">
                 <div class="btn btn-default cartBtn" onclick="addToCart(${product.id})">加入购物车</div>
-                <div class="btn btn-success buyBtn" onclick="buy()">立即购买</div>
+                <c:if test="${customer != null}">
+                    <div class="btn btn-success buyBtn" onclick="buy()">立即购买</div>
+                </c:if>
             </div>
         </div>
     </div>

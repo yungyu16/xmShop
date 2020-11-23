@@ -32,6 +32,17 @@
     margin: 0;
     font-size: 20px;
     text-align: left;
+    display: inline-block;
+}
+
+.productDesc {
+    padding-top: 10px;
+    font-weight: normal;
+    color: #585858;
+    margin: 0;
+    font-size: 15px;
+    text-align: left;
+    display: inline-block;
 }
 
 .pic {
