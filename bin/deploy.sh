@@ -1,11 +1,11 @@
 #! /bin/bash
-
+#检查参数
 if [ $# -lt 1 ]; then
   echo 请指定需要打包的系统 b=后台系统 f=商城系统
   exit 1
 fi
-
-if type git >/dev/null 2>&1; then
+#检查是否安装docker
+if type docker >/dev/null 2>&1; then
   echo 'docker exists'
 else
   echo 'docker not exists,start install... '
@@ -31,6 +31,7 @@ b)
   exit 1
   ;;
 esac
+echo 开始build镜像:"$IMG_NAME":"$TIMESTAMP"
 docker build -t "$IMG_NAME":"$TIMESTAMP" docker
 docker tag "$IMG_NAME":"$TIMESTAMP" "$IMG_NAME":latest
 docker stop $IMG_NAME || echo 关闭$IMG_NAME失败,容器不存在或无法关闭,请留意
