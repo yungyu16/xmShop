@@ -29,7 +29,7 @@ public class AdminController {
     private final ProductTypeDao productTypeDao;
     private final ProductDao productDao;
 
-    @RequestMapping("refresh-products")
+    @RequestMapping("add-products")
     public String refreshProducts(RefreshActionParam actionParam) {
         if (CollectionUtils.isEmpty(collectors)) {
             return "no any collector";
