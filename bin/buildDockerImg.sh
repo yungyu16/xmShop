@@ -20,6 +20,5 @@ b)
   exit 1
   ;;
 esac
-cd docker || exit 1
-docker build -t "$IMG_NAME":"$TIMESTAMP"
+docker build -t "$IMG_NAME":"$TIMESTAMP" docker
 docker tag "$IMG_NAME":"$TIMESTAMP" "$IMG_NAME":latest
