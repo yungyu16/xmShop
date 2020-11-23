@@ -519,7 +519,7 @@
                 </li>
                 <li class="${param.num == 4 ? 'active' : ''}">
                     <a href="javascript:void(0)"
-                       onclick="${sessionScope.get('customer') == null ? 'showLoginModal()' :'showCustomerInfo()'}">会员中心</a>
+                       onclick="${sessionScope.get('customer') == null ? 'showLoginModal()' :'showCustomerInfo()'}">个人中心</a>
                 </li>
                 <%--                <li>--%>
                 <%--                    <div style="background-color: #ff6600; margin: 20px 80px">--%>
