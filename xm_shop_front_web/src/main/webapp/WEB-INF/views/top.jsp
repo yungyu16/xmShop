@@ -495,8 +495,8 @@
 <div class="navbar navbar-default navbar-fixed-top clear-bottom">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand logo-style" target="_blank" href="https://www.xmlvhy.com">
-                <img class="brand-img" src="${pageContext.request.contextPath}/images/com-logo1.png" alt="logo"
+            <a class="navbar-brand logo-style" href="${pageContext.request.contextPath}/">
+                <img class="brand-img" src="${pageContext.request.contextPath}/images/site-logo.png" alt="logo"
                      height="66">
             </a>
         </div>
@@ -521,11 +521,11 @@
                     <a href="javascript:void(0)"
                        onclick="${sessionScope.get('customer') == null ? 'showLoginModal()' :'showCustomerInfo()'}">会员中心</a>
                 </li>
-<%--                <li>--%>
-<%--                    <div style="background-color: #ff6600; margin: 20px 80px">--%>
-<%--                        <span>本站只是项目功能演示，不会产生任何交易信息！</span>--%>
-<%--                    </div>--%>
-<%--                </li>--%>
+                <%--                <li>--%>
+                <%--                    <div style="background-color: #ff6600; margin: 20px 80px">--%>
+                <%--                        <span>本站只是项目功能演示，不会产生任何交易信息！</span>--%>
+                <%--                    </div>--%>
+                <%--                </li>--%>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="navbarInfo">
                 <%--TODO: 使用c:choose 判断 session中是否存有用户的信息--%>
@@ -650,7 +650,7 @@
                     </button>
                     <button type="button" class="btn btn-warning" onclick="loginByAccount()">登&nbsp;&nbsp;录</button>
                     &nbsp;&nbsp;
-<%--                    <a class="btn-link" id="btn-sms-back">短信快捷登录</a>--%>
+                        <%--                    <a class="btn-link" id="btn-sms-back">短信快捷登录</a>--%>
                 </div>
             </form>
         </div>
