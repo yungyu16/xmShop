@@ -49,10 +49,12 @@ public class AdminController {
             if (typeName == null || typeName.length() == 0) {
                 return "typeName is null";
             }
-            productType = productTypeDao.selectProductTypeByName(typeName);
-            if (productType == null) {
-                productTypeDao.insertProductType(typeName, 1);
+            synchronized (this) {
                 productType = productTypeDao.selectProductTypeByName(typeName);
+                if (productType == null) {
+                    productTypeDao.insertProductType(typeName, 1);
+                    productType = productTypeDao.selectProductTypeByName(typeName);
+                }
             }
         }
         if (productType == null) {
