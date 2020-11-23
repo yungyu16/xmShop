@@ -31,8 +31,9 @@ b)
   exit 1
   ;;
 esac
-echo 开始build镜像:"$IMG_NAME":"$TIMESTAMP"
-docker build -t "$IMG_NAME":"$TIMESTAMP" docker
-docker tag "$IMG_NAME":"$TIMESTAMP" "$IMG_NAME":latest
+IMG_FULL_NAME="$IMG_NAME":"$TIMESTAMP"
+echo 开始build镜像:$IMG_FULL_NAME
+docker build -t $IMG_FULL_NAME docker
+docker tag $IMG_FULL_NAME "$IMG_NAME":latest
 docker stop $IMG_NAME || echo 关闭$IMG_NAME失败,容器不存在或无法关闭,请留意
-docker run -d --rm --name=$IMG_NAME -p $PORT_MAPPING "$IMG_NAME":latest
+docker run -d --rm --name=$IMG_NAME -p $PORT_MAPPING $IMG_FULL_NAME
