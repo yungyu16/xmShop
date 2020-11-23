@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class JdProductCollector implements ProductCollector {
-    public static final RuntimeException ex = new RuntimeException();
+    private static final RuntimeException ex = new RuntimeException();
     private static final Supplier<RuntimeException> exThrower = () -> ex;
     private static final Pattern pattern = Pattern.compile("/n[\\d]/");
     private static final Pattern jdPattern = Pattern.compile("京东.*?\\s+");
