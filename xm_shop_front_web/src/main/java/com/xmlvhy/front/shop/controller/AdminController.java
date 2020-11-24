@@ -31,7 +31,7 @@ public class AdminController {
     private final ProductDao productDao;
 
     @RequestMapping("add-products")
-    public String refreshProducts(RefreshActionParam actionParam) {
+    public String addProducts(RefreshActionParam actionParam) {
         log.info("请求参数：{}", JSON.toJSONString(actionParam));
         if (CollectionUtils.isEmpty(collectors)) {
             return "no any collector";
@@ -49,10 +49,12 @@ public class AdminController {
             if (typeName == null || typeName.length() == 0) {
                 return "typeName is null";
             }
-            productType = productTypeDao.selectProductTypeByName(typeName);
-            if (productType == null) {
-                productTypeDao.insertProductType(typeName, 1);
+            synchronized (this) {
                 productType = productTypeDao.selectProductTypeByName(typeName);
+                if (productType == null) {
+                    productTypeDao.insertProductType(typeName, 1);
+                    productType = productTypeDao.selectProductTypeByName(typeName);
+                }
             }
         }
         if (productType == null) {
