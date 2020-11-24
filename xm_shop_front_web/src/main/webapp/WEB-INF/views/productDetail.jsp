@@ -130,7 +130,7 @@
 </div>--%>
 <!--banner end-->
 
-<div class="row" style="margin-top: 20%">
+<div class="row" style="margin-top: 12%">
     <div class="container">
         <div class="col-sm-6" style="padding: 0">
             <div class="imgShow">
