@@ -16,7 +16,7 @@ docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2  -w /usr
 
 IMG_NAME="xmshop-front"
 TIMESTAMP=$(date "+%Y%m%d%H%M%S")
-PORT_MAPPING="8080:8080"
+PORT_MAPPING="80:8080"
 case $1 in
 f)
   cp xm_shop_front_web/target/xmShopFront.war docker/ROOT.war
