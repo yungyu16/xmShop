@@ -191,9 +191,12 @@
                                              href="searchAllProducts?pageName=${curPage - 1}&name=${productParam.name}&minPrice=${productParam.minPrice}&maxPrice=${productParam.maxPrice}&productTypeId=${productParam.productTypeId}">上一页</a>
                     </li>
                 </c:if>
-                <li class="page-item"><a class="page-link"
-                                         href="searchAllProducts?pageName=${curPage + 1}&name=${productParam.name}&minPrice=${productParam.minPrice}&maxPrice=${productParam.maxPrice}&productTypeId=${productParam.productTypeId}">下一页</a>
-                </li>
+                <c:if test="${curPage < pageInfo.pages}">
+                    <li class="page-item"><a class="page-link"
+                                             href="searchAllProducts?pageName=${curPage + 1}&name=${productParam.name}&minPrice=${productParam.minPrice}&maxPrice=${productParam.maxPrice}&productTypeId=${productParam.productTypeId}">下一页</a>
+                    </li>
+                </c:if>
+
             </ul>
         </div>
     </div>
