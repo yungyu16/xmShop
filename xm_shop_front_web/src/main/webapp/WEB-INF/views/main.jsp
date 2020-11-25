@@ -78,7 +78,7 @@
                     <li data-target="#xm" data-slide-to="3"></li>
                 </ul>
                 <!--滑块-->
-                <div class="carousel-inner" style="height: 220px">
+                <div class="carousel-inner" style="height: 420px">
                     <div class="item active">
                         <img src="${banners.banner1}" alt="">
                     </div>
@@ -202,7 +202,7 @@
     <!-- footers start -->
     <footer id="footer" class="footers navbar-fixed-bottom">
         <div class="container-fluid footers">
-            Copy Right @ 2019 BY XIAOMO
+            Copy Right @ 2020 BY AoLianBin
         </div>
     </footer>
     <!-- footers end -->

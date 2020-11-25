@@ -61,10 +61,10 @@ public class ProductController {
         model.addAttribute("curPage", pageName);
         model.addAttribute("productParam", productParam);
         Map<String, String> banners = Maps.newHashMap();
-        banners.put("banner1", httpRequest.getContextPath() + "/images/banner1.jpg");
-        banners.put("banner2", httpRequest.getContextPath() + "/images/banner2.jpg");
-        banners.put("banner3", httpRequest.getContextPath() + "/images/banner3.jpg");
-        banners.put("banner4", httpRequest.getContextPath() + "/images/banner4.jpg");
+        banners.put("banner1", httpRequest.getContextPath() + "/images/banner1.png");
+        banners.put("banner2", httpRequest.getContextPath() + "/images/banner2.png");
+        banners.put("banner3", httpRequest.getContextPath() + "/images/banner3.png");
+        banners.put("banner4", httpRequest.getContextPath() + "/images/banner4.png");
         AtomicInteger idx = new AtomicInteger(1);
         bannerDao.collectAllBanner()
                 .forEach(it -> banners.put("banner" + idx.getAndIncrement(), it));

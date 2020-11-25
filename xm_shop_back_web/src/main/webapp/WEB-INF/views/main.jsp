@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>小莫商城-后台管理系统</title>
+    <title>傲联宾商城-后台管理系统</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrapValidator.min.css"/>
@@ -79,7 +79,7 @@
         <!-- header start -->
         <div class="clear-bottom head">
             <div class="container head-cc">
-                <p>小莫商城<span>后台管理系统</span></p>
+                <p>傲联宾商城<span>后台管理系统</span></p>
                 <div class="welcome">
                     <div class="left">欢迎您：<span>${sessionScope.get("systemUser").name}</span></div>
                     <%--<div class="right">xxx</div>--%>
@@ -127,7 +127,7 @@
 <!-- footers start -->
 <footer id="footer" class="footer navbar-fixed-bottom">
     <div class="container-fluid footers">
-        Copy Right @ 2019 BY XIAOMO
+        Copy Right @ 2020 BY AoLianBin
     </div>
 </footer>
 <!-- footers end -->

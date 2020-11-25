@@ -238,7 +238,7 @@
 <!-- footers start -->
 <footer id="footer" class="footer navbar-fixed-bottom">
     <div class="container-fluid footers">
-        Copy Right @ 2019 BY XIAOMO
+        Copy Right @ 2020 BY AoLianBin
     </div>
 </footer>
 <!-- footers end -->

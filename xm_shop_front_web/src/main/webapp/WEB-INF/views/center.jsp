@@ -129,9 +129,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="loginName" class="col-md-2 col-sm-2 control-label">登陆账号:</label>
+            <label for="loginName" class="col-md-2 col-sm-2 control-label">登录账号:</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="loginName" placeholder="登陆账号" readonly="readonly"
+                <input type="text" class="form-control" id="loginName" placeholder="登录账号" readonly="readonly"
                        value="${user.loginName}">
             </div>
         </div>
@@ -208,7 +208,7 @@
 <!-- footers start -->
 <footer id="footer" class="footer navbar-fixed-bottom">
     <div class="container-fluid footers">
-        Copy Right @ 2019 BY XIAOMO
+        Copy Right @ 2020 BY AoLianBin
     </div>
 </footer>
 <!-- footers end -->

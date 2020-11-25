@@ -132,7 +132,7 @@
                     <p>
                         <%--TODO:商品名称--%>
                         <span class="des-label">商品名称：</span>
-                        <span>小莫水果</span>
+                        <span>踏步机</span>
                     </p>
                     <p>
                         <span class="des-label">支付金额：</span>
@@ -176,7 +176,7 @@
 <!-- footers start -->
 <footer id="footer" class="footers navbar-fixed-bottom">
     <div class="footer container-fluid footers">
-        Copy Right @ 2019 BY XIAOMO
+        Copy Right @ 2020 BY AoLianBin
     </div>
 </footer>
 <!-- footers end -->

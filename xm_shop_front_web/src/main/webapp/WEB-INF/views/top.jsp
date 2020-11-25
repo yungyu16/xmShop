@@ -35,7 +35,7 @@
 <%--TODO:修改密码重新登录加载模板--%>
 <script type="text/html" id="loginOrRegist">
     <li>
-        <a href="#" data-toggle="modal" data-target="#loginModal">登陆</a>
+        <a href="#" data-toggle="modal" data-target="#loginModal">登录</a>
     </li>
     <li>
         <a href="#" data-toggle="modal" data-target="#registModal"><span style="color: red">注册</span></a>
@@ -532,7 +532,7 @@
                     <%--TODO:如果session中用户为空则走 when 中--%>
                     <c:when test="${empty customer}">
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#loginModal">登陆</a>
+                            <a href="#" data-toggle="modal" data-target="#loginModal">登录</a>
                         </li>
                         <li>
                             <a href="#" data-toggle="modal" data-target="#registModal"><span style="color: red">注册</span></a>
@@ -617,7 +617,7 @@
 <!-- 登录模态框 start -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: 10%;">
     <div class="modal-dialog" role="document" style="width: 34%">
-        <!-- 用户名密码登陆 start -->
+        <!-- 用户名密码登录 start -->
         <div class="modal-content" id="login-account">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
@@ -653,9 +653,9 @@
                 </div>
             </form>
         </div>
-        <!-- 用户名密码登陆 end -->
+        <!-- 用户名密码登录 end -->
 
-        <!-- 短信快捷登陆 start -->
+        <!-- 短信快捷登录 start -->
         <div class="modal-content" id="login-sms" style="display: none;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
@@ -691,7 +691,7 @@
                 </div>
             </form>
         </div>
-        <!-- 短信快捷登陆 end -->
+        <!-- 短信快捷登录 end -->
 
     </div>
 </div>

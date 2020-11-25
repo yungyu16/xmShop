@@ -420,7 +420,7 @@
 <!-- footers start -->
 <footer id="footer" class="footers navbar-fixed-bottom">
     <div class="footer container-fluid footers">
-        Copy Right @ 2019 BY XIAOMO
+        Copy Right @ 2020 BY AoLianBin
     </div>
 </footer>
 <!-- footers end -->
