@@ -9,11 +9,11 @@
     <title>个人中心</title>
     <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/site-logo.png"
           media="screen"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/iconfont/iconfont.css">
-    <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/zshop.js"></script>
 
     <script>

@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrapValidator.min.css"/>
-<script src="${pageContext.request.contextPath}/layer/layer.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrapValidator.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/template.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+<script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/art-template/4.13.2/lib/template-web.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/zshop.css"/>
 <%--TODO:artTemplate的使用--%>
 <script id="welcome" type="text/html">
