@@ -25,17 +25,12 @@
 
             $('#add').click(function () {
                 t.val(parseInt(t.val()) + 1);
-                if (parseInt(t.val()) != 1) {
-                    $('#min').attr('disabled', false);
-                }
+                $('#min').attr('disabled', parseInt(t.val()) === 1);
             });
 
             $('#min').click(function () {
                 t.val(parseInt(t.val()) - 1);
-                if (parseInt(t.val()) == 1) {
-                    $('#min').attr('disabled', true);
-                }
-
+                $('#min').attr('disabled', parseInt(t.val()) === 1);
             });
             //调整footer 的位置
             autoFooterHeight();
@@ -50,7 +45,7 @@
             // 获取显示屏的高度
             var iHeight = document.documentElement.clientHeight || document.body.clientHeight;
             // 如果内容的高度大于（窗口的高度 - 导航的高度）,移除属性样式
-            if (bodyHeight > (iHeight - navHeight)) {
+            if (bodyHeight >= (iHeight - navHeight)) {
                 $("#footer").removeClass("navbar-fixed-bottom");
             }
         }
@@ -150,14 +145,14 @@
                     <!--累计出售-->
                     <div class="sellnumDetail">
                         <span style="margin-top: 20px;color: #bfbfbf">累计出售: </span>
-                        <span style="color:#5885C7;">66</span>
+                        <span style="color:#5885C7;">17</span>
                     </div>
                     <!--分割线-->
                     <div class="sellnumborder"></div>
 
                     <div class="sellnumDetail" style="margin-left: 10px;">
                         <span style="color: #bfbfbf">累计评价:</span>
-                        <span style="color: #5885C7">666</span>
+                        <span style="color: #5885C7">1541</span>
                     </div>
                 </div>
             </div>
@@ -166,7 +161,7 @@
                 <input type="button" id="min" name="min" value="-" disabled="disabled">
                 <input class="textBox" id="text_box" name="textBox" type="text" value="1">
                 <input id="add" name="add" type="button" value="+">
-                <span class="Hgt">库存（99）</span>
+                <span class="Hgt">库存（248）</span>
             </div>
 
             <div class="shop">
