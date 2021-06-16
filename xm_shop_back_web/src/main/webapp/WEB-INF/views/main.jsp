@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>傲联宾商城-后台管理系统</title>
+    <title>推小秘-后台管理系统</title>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css"/>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
@@ -79,7 +79,7 @@
         <!-- header start -->
         <div class="clear-bottom head">
             <div class="container head-cc">
-                <p>傲联宾商城<span>后台管理系统</span></p>
+                <p>推小秘<span>后台管理系统</span></p>
                 <div class="welcome">
                     <div class="left">欢迎您：<span>${sessionScope.get("systemUser").name}</span></div>
                     <%--<div class="right">xxx</div>--%>
@@ -127,7 +127,7 @@
 <!-- footers start -->
 <footer id="footer" class="footer navbar-fixed-bottom">
     <div class="container-fluid footers">
-        Copy Right @ 2020 BY AoLianBin
+        Copy Right @ 2021 BY TuiXiaoMi
     </div>
 </footer>
 <!-- footers end -->

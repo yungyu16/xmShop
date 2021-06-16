@@ -205,7 +205,7 @@
     <!-- footers start -->
     <footer id="footer" class="footers navbar-fixed-bottom">
         <div class="container-fluid footers">
-            Copy Right @ 2020 BY AoLianBin
+            Copy Right @ 2021 BY TuiXiaoMi
         </div>
     </footer>
     <!-- footers end -->

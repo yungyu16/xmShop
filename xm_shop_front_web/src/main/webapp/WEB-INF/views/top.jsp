@@ -503,7 +503,7 @@
             <ul class="nav navbar-nav">
                 <%--todo:通过jsp include 传值的方式设置active--%>
                 <li class="${param.num == 1 ? 'active' : ''}">
-                    <a href="${pageContext.request.contextPath}/front/product/searchAllProducts">商城主页</a>
+                    <a href="${pageContext.request.contextPath}/front/product/searchAllProducts">首页</a>
                 </li>
                 <li class="${param.num == 2 ? 'active' : ''}" style="cursor: pointer;">
                     <%--<a id="shopCart" onclick="showShopCarts()"  href="${pageContext.request.contextPath}/front/cart/myCarts">--%>
